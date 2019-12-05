@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { render } from "react-dom";
 import ReactDOMServer from "react-dom/server";
 import { transform } from "babel-standalone";
+import styled from "styled-components";
 
 // <Preview> component from component-playground without updating
 class Preview extends Component {
@@ -72,11 +73,10 @@ class Preview extends Component {
 
   render() {
     return (
-      <div
+      <PreviewContainer
         ref={div => {
           this.mount = div;
         }}
-        className="Preview"
       />
     );
   }
@@ -96,3 +96,8 @@ Preview.propTypes = {
 };
 
 export default Preview;
+
+const PreviewContainer = styled.div`
+  background-color: #ffffff;
+  box-shadow: -12px 12px 0px 0px rgba(188, 82, 64, 1);
+`;

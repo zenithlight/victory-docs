@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 import ReactDOM from "react-dom";
 import { withRouteData, Link } from "react-static";
 import * as Victory from "victory";
+import styled, { css } from "styled-components";
 
 // Child Components
 import Footer from "../partials/footer";
-import Icon from "../partials/icon";
 
 import Preview from "../partials/gallery/preview";
 
@@ -36,37 +36,34 @@ class Gallery extends React.Component {
     const title = item.data.title;
 
     return (
-      <Link to={`/gallery/${slug}`}>
-        <Preview
-          codeText={code}
-          noRender={false}
-          theme="elegant"
-          scope={this.scope}
-        />
-        <p className="Gallery-item-heading">
-          {title}
-          &nbsp;
-          <Icon glyph="internal-link" />
-        </p>
-      </Link>
+      <StyledLink to={`/gallery/${slug}`}>
+        <Preview codeText={code} noRender={false} scope={this.scope} />
+        <Title>{title}</Title>
+      </StyledLink>
     );
   }
 
   render() {
     const { gallery } = this.props;
     const previews = gallery.map((item, index) => (
-      <div key={index} className="Gallery-item">
-        {this.renderPreviewItem(item)}
-      </div>
+      <GalleryItem key={index}>{this.renderPreviewItem(item)}</GalleryItem>
     ));
 
     return (
-      <div className="Page-content without-content-sidebar">
-        <article className="Gallery-article Article--noBottom">
-          <div className="Gallery">{previews}</div>
-        </article>
+      <React.Fragment>
+        <PageContainer>
+          <Header>Victory Gallery</Header>
+          <p>
+            Body copy. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+          </p>
+          <GalleryArticle>
+            <GalleryContainer>{previews}</GalleryContainer>
+          </GalleryArticle>
+        </PageContainer>
         <Footer />
-      </div>
+      </React.Fragment>
     );
   }
 }
@@ -83,3 +80,57 @@ Gallery.defaultProps = {
 export default withRouteData(({ gallery, location }) => (
   <Gallery gallery={gallery} location={location} />
 ));
+
+const Title = styled.p`
+  font-weight: bold;
+  color: #4c2e29;
+`;
+
+const Header = styled.h1`
+  font-weight: bold;
+`;
+
+const StyledLink = styled(Link)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const GalleryItem = styled.div`
+  flex: 1 0 250px;
+  padding: ${props =>
+    css`${props.theme.gutterSmall} 0 0 ${props.theme.gutterSmall}`};
+  margin-bottom: ${props => props.theme.gutterSmall};
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  max-width: 300px;
+  overflow: hidden;
+  > * > {
+    height: 100% !important;
+  }
+`;
+
+const GalleryContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: ${props => css`0 0 0 calc(-1 * ${props.theme.gutterSmall}) `};
+`;
+
+const PageContainer = styled.div`
+  padding-left: ${props => props.theme.gutter};
+  padding-right: ${props => props.theme.gutter};
+  height: 100%;
+  margin-bottom: ${props => props.theme.gutter};
+  margin-bottom: > p {
+    margin-bottom: ${props => props.theme.gutter};
+  }
+`;
+
+const GalleryArticle = styled.div`
+  > p {
+    max-width: 38em;
+  }
+`;
