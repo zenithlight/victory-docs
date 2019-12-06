@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Router, Route, withRouter } from "react-static";
 import VictoryHeader from "./partials/header";
+import { ThemeProvider } from "styled-components";
 /* "react-static-routes" is generated at runtime https://github.com/nozzle/react-static/issues/52 */
 // eslint-disable-next-line import/no-unresolved
 import Routes from "react-static-routes";
 import Analytics from "./google-analytics";
 import "./app.css";
+import { theme } from "./theme";
 //  If none of the base prism js themes are quite what we want for our site's aesthetic, we can use/extend any of these:
 // https://github.com/PrismJS/prism-themes
 // Note that themes also manage code block dimensions -- currently we don't use any theme, unclear if the current
@@ -14,7 +16,7 @@ import "./app.css";
 // import "prismjs/themes/prism-coy.css"
 
 const scrollContent = async ({ hash }, contentPaneClass = ".Page-content") => {
-  const item = document.querySelector(contentPaneClass + " " + hash);
+  const item = document.querySelector(`${contentPaneClass} ${hash}`);
   if (item) {
     item.scrollIntoView();
   }
@@ -104,12 +106,14 @@ const App = () => (
     autoScrollToTop
     history={history}
   >
-    <WrappedScrollToTop>
-      <VictoryHeader />
-      <Analytics id="UA-43290258-1">
-        <Routes>{RenderRoutes}</Routes>
-      </Analytics>
-    </WrappedScrollToTop>
+    <ThemeProvider theme={theme}>
+      <WrappedScrollToTop>
+        <VictoryHeader />
+        <Analytics id="UA-43290258-1">
+          <Routes>{RenderRoutes}</Routes>
+        </Analytics>
+      </WrappedScrollToTop>
+    </ThemeProvider>
   </Router>
 );
 

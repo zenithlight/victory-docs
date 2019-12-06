@@ -1,14 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ReactDOM from "react-dom";
-import { withRouteData, Link } from "react-static";
+import { withRouteData } from "react-static";
 import * as Victory from "victory";
-
 // Child Components
 import Footer from "../partials/footer";
-import Icon from "../partials/icon";
 
 import Preview from "../partials/gallery/preview";
+import {
+  StyledLink,
+  Title,
+  GalleryArticle,
+  GalleryItem,
+  GalleryContainer,
+  PageContainer,
+  Header
+} from "./gallery.styles";
 
 class Gallery extends React.Component {
   constructor(props) {
@@ -36,37 +43,34 @@ class Gallery extends React.Component {
     const title = item.data.title;
 
     return (
-      <Link to={`/gallery/${slug}`}>
-        <Preview
-          codeText={code}
-          noRender={false}
-          theme="elegant"
-          scope={this.scope}
-        />
-        <p className="Gallery-item-heading">
-          {title}
-          &nbsp;
-          <Icon glyph="internal-link" />
-        </p>
-      </Link>
+      <StyledLink to={`/gallery/${slug}`}>
+        <Preview codeText={code} noRender={false} scope={this.scope} />
+        <Title>{title}</Title>
+      </StyledLink>
     );
   }
 
   render() {
     const { gallery } = this.props;
     const previews = gallery.map((item, index) => (
-      <div key={index} className="Gallery-item">
-        {this.renderPreviewItem(item)}
-      </div>
+      <GalleryItem key={index}>{this.renderPreviewItem(item)}</GalleryItem>
     ));
 
     return (
-      <div className="Page-content without-content-sidebar">
-        <article className="Gallery-article Article--noBottom">
-          <div className="Gallery">{previews}</div>
-        </article>
+      <React.Fragment>
+        <PageContainer>
+          <Header>Victory Gallery</Header>
+          <p>
+            Body copy. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+          </p>
+          <GalleryArticle>
+            <GalleryContainer>{previews}</GalleryContainer>
+          </GalleryArticle>
+        </PageContainer>
         <Footer />
-      </div>
+      </React.Fragment>
     );
   }
 }
