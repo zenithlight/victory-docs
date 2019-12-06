@@ -101,4 +101,6 @@ const PreviewContainer = styled.div`
   background-color: #ffffff;
   box-shadow: -12px 12px 0px 0px rgba(188, 82, 64, 1);
   border: 0.5px solid #f2f2f2;
+  height: 100%;
+  width: 100%;
 `;
