@@ -63,19 +63,19 @@ const Contact = styled.div`
   display: flex;
   flex-direction: column;
   > a {
-    color: #ffffff;
+    color: ${props => props.theme.colors.white};
     text-decoration: none;
   }
 `;
 
 const FooterIcon = styled(SVG)`
   > svg {
-    color: #ffffff;
+    color: ${props => props.theme.colors.white};
     height: 6rem;
   }
 `;
 
 const Blurb = styled.div`
   flex: 3;
-  color: #ffffff;
+  color: ${props => props.theme.colors.white};
 `;

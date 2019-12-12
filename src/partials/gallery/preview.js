@@ -98,7 +98,7 @@ Preview.propTypes = {
 export default Preview;
 
 const PreviewContainer = styled.div`
-  background-color: #ffffff;
+  background-color: ${props => props.theme.colors.white}f;
   box-shadow: -12px 12px 0px 0px rgba(188, 82, 64, 1);
   border: 0.5px solid #f2f2f2;
   height: 100%;

@@ -3,7 +3,7 @@ import { Link } from "react-static";
 
 const Title = styled.p`
   font-weight: bold;
-  color: #4c2e29;
+  color: ${props => props.theme.colors.redBackground};
 `;
 
 const Header = styled.h1`
