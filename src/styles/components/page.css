@@ -10,7 +10,6 @@
 @custom-media --medium-viewport only screen and (min-width: 960px);
 @custom-media --large-viewport only screen and (min-width: 1200px);
 
-
 @media only screen and (min-width: 960px) {
   .Page-wrapper {
     display: flex;
@@ -53,10 +52,6 @@
   flex-direction: column;
   flex: 1;
   padding: 0;
-}
-
-.without-content-sidebar {
-  max-height: calc(100vh - 10em); /* Number is absolutely magical */
 }
 
 @media only screen and (min-width: 960px) {
