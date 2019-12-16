@@ -9,13 +9,12 @@ class Index extends React.Component {
   render() {
     return (
       <div className="Page-content without-content-sidebar">
-        <section className="Home playgroundsMaxHeight">
+        <section>
           <Hero />
-
-          <Companies />
 
           <Benefits />
 
+          {/* <Companies /> */}
           <div className="u-textCenter u-maxWidthPara u-marginAuto">
             <h2>We are Formidable</h2>
             <p>

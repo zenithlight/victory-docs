@@ -4,15 +4,6 @@
  *  .isLight modifier for dark backgrounds
  *
  */
-a:link {
-  color: var(--darkRed);
-  text-decoration: none;
-  transition: color 250ms ease-in;
-}
-
-a:visited {
-  color: var(--darkGray);
-}
 
 a:focus,
 a:hover {

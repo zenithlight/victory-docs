@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-static";
 import { Wrapper } from "../../components/wrapper";
 import styled from "styled-components";
-import badge from "../../static/sidebar-badge.png";
+import badge from "../../static/badge.svg";
 
 const WrapperStyled = styled(Wrapper)`
   z-index: 1;
@@ -13,38 +13,35 @@ const HeroContent = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  margin-top: 5rem;
   padding: 0;
   position: relative;
   text-align: left;
   width: 100%;
+  background: #bc5240;
+  padding: 4rem 1.25rem 1.25rem;
+
   @media (min-width: 768px) {
     flex-direction: row;
-    margin-top: 20rem;
-    padding-left: 32rem;
   }
 `;
 
 const HeroTitle = styled.h1`
-  font-size: 5rem;
-  letter-spacing: 0.15em;
-  margin: 0 0 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 0.1em;
+  margin: 2.5rem 0 1rem;
   text-align: center;
   text-transform: uppercase;
   width: 100%;
-  @media (min-width: 768px) {
-    font-size: 5.8rem;
-    margin: 4rem 0 2rem;
-    text-align: left;
-  }
 `;
 
 const HeroBody = styled.p`
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   letter-spacing: 0.08em;
-  font-size: 2rem;
-  line-height: 3rem;
+  font-size: 1rem;
+  line-height: 1.67;
   text-align: left;
+  color: #fff;
   width: 100%;
   margin-top: 0;
   margin-bottom: 0;
@@ -68,115 +65,117 @@ const HeroLogoContainer = styled.div`
 `;
 
 const HeroLogo = styled.img`
-  width: 20rem;
+  width: 100%;
+  max-width: 20rem;
   margin: auto;
   @media (min-width: 768px) {
     left: -3rem;
-    max-width: 32rem;
-    position: absolute;
-    top: 0;
-    width: 100%;
   }
 `;
 
 const HeroButtonsWrapper = styled.div`
-  max-width: 100%;
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  display: flex;
+  margin: 4.5rem 0 2.5rem 0;
+  max-width: 100%;
   @media (min-width: 1024px) {
     flex-direction: row;
   }
   @media (max-width: 768px) {
     align-items: center;
+    width: 30rem;
   }
 `;
 const HeroNPMWrapper = styled.div`
+  display: flex;
   flex-direction: row;
   justify-content: center;
-  display: none;
-  width: 30rem;
-  @media (min-width: 768px) {
-    display: flex;
-  }
+  width: 100%;
   @media (min-width: 1024px) {
     width: 28rem;
   }
 `;
 
 const HeroNPMCopy = styled.p`
-  width: 22rem;
-  height: 4rem;
-  color: #383838;
-  background-color: #d5d5d5;
+  flex: 1;
+  height: 2rem;
+  color: #4c2e29;
+  background-color: #fff;
   color: black;
   text-align: left;
-  padding: 0.33rem 1.5rem;
-  line-height: 3.44rem;
-  font-size: 14px;
+  padding: 0 0.8rem;
+  line-height: 2rem;
+  font-size: 0.8rem;
   letter-spacing: 0.2px;
   margin: 0;
 `;
 const HeroNPMButton = styled.button`
-  width: 8rem;
-  height: 4rem;
-  background-color: #ffffff;
-  font-size: 14px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
+  height: 2rem;
+  font-size: 0.8rem;
+  line-height: 2rem;
   letter-spacing: 1px;
-  color: #383838;
+  padding: 0 1rem;
+  background-color: #ff684f;
+  color: #4c2e29;
   border: 0;
   text-transform: uppercase;
   cursor: copy;
-  &:hover {
-    background-color: #f6f6f6;
-  }
 `;
 
 export const HeroDocsButton = styled(Link)`
-  width: 30rem;
-  margin-left: 0rem;
-  height: 4rem;
-  font-size: 14px;
-  background-color: #ffffff;
-  line-height: 4rem;
+  width: 100%;
+  height: 2rem;
+  font-size: 0.8rem;
+  background-color: #ff684f;
+  line-height: 2rem;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #383838;
-  border: 0;
-  margin-top: 5rem;
+  color: #4c2e29;
+  margin-top: 0.5rem;
   @media (min-width: 768px) {
-    margin-top: 2rem;
     width: 30rem;
   }
   @media (min-width: 1024px) {
-    margin-top: 0;
-    margin-left: 2rem;
     width: 18rem;
-  }
-  &:hover {
-    background-color: #f6f6f6;
   }
 `;
 
-const HeroNavList = styled.ul`
-  border-top: 2px solid #707070;
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-  padding: 2rem 0 0;
-  text-align: center;
+const HeroNav = styled.div`
   width: 100%;
-  justify-content: space-around;
+  border-top: 2px solid #ff684f;
+`;
+
+const NavButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin: 1rem 0;
+  width: 100%;
+
+  & span {
+    margin-right: 0.5rem;
+    font-size: 0.88rem;
+    text-transform: uppercase;
+  }
+
+  & svg {
+    width: auto;
+    height: 1.5rem;
+    transform: rotate(${({ expanded }) => (expanded ? "180deg" : "0deg")});
+  }
+`;
+
+const NavItems = styled.ul`
+  display: ${({ expanded }) => (expanded ? "flex" : "none")};
+  flex-direction: column;
+  list-style: none;
+  align-items: center;
 
   & li {
     display: inline-block;
-    margin-right: 33px;
   }
   & li:last-child {
     margin-right: 0;
@@ -184,26 +183,8 @@ const HeroNavList = styled.ul`
   & li a {
     color: white;
     display: inline-block;
-    font-size: 1.7rem;
-    letter-spacing: 0.05em;
-    transition: opacity 0.4s;
+    font-size: 0.88rem;
     text-transform: uppercase;
-  }
-  & li a:hover {
-    color: #8196ff;
-  }
-  @media (min-width: 768px) {
-    display: inline-block;
-    border-top: 2px solid #ffffff;
-    padding-top: 4rem;
-    margin: 4rem 0 0 0;
-    & li {
-      margin-right: 66px;
-    }
-  }
-  @media (min-width: 1024px) {
-    width: 100%;
-    margin: 4rem 0 0 0;
   }
 `;
 
@@ -219,86 +200,94 @@ const copyFallBack = () => {
   copyTextArea.remove();
 };
 
-class Hero extends React.Component {
-  constructor() {
-    super(...arguments);
+const Hero = function() {
+  const [animating, setAnimating] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const [navExpanded, setNavExpanded] = useState(false);
 
-    this.state = {
-      animating: false,
-      copied: false
-    };
-  }
-
-  handleCopy(e) {
+  const handleCopy = e => {
     if (!navigator.clipboard) {
       copyFallBack();
       e.preventDefault();
       return;
     }
     navigator.clipboard.writeText("npm install victory");
-  }
+  };
 
-  render() {
-    return (
-      <WrapperStyled noPadding>
-        <HeroContent>
-          <HeroLogoContainer>
-            <HeroLogo src={badge} />
-          </HeroLogoContainer>
-          <HeroTitle>victory</HeroTitle>
-          <HeroBody>
-            React.js components for modular charting and data visualization.
-          </HeroBody>
-          <HeroButtonsWrapper>
-            <HeroNPMWrapper>
-              <HeroNPMCopy>npm install victory</HeroNPMCopy>
-              <HeroNPMButton onClick={this.handleCopy}>copy</HeroNPMButton>
-            </HeroNPMWrapper>
-            <HeroDocsButton prefetch to="/docs">
-              Documentation
-            </HeroDocsButton>
-          </HeroButtonsWrapper>
-        </HeroContent>
-        <HeroNavList>
-          <li>
-            <Link prefetch to="/about">
-              About
-            </Link>
-          </li>
-          <li>
-            <Link prefetch to="/docs">
-              Docs
-            </Link>
-          </li>
-          <li>
-            <Link prefetch to="/guides">
-              Guides
-            </Link>
-          </li>
-          <li>
-            <Link prefetch to="/gallery">
-              Gallery
-            </Link>
-          </li>
-          <li>
-            <a title="Support" href="https://spectrum.chat/victory">
-              Support
-            </a>
-          </li>
-          <li>
-            <a title="GitHub" href="https://github.com/FormidableLabs/victory">
-              GitHub
-            </a>
-          </li>
-          <li>
-            <Link prefetch to="/faq">
-              Faqs
-            </Link>
-          </li>
-        </HeroNavList>
-      </WrapperStyled>
-    );
-  }
-}
+  return (
+    <WrapperStyled noPadding>
+      <HeroContent>
+        <HeroLogoContainer>
+          <HeroLogo src={badge} />
+        </HeroLogoContainer>
+        <HeroTitle>victory</HeroTitle>
+        <HeroBody>
+          React.js components for modular charting and data visualization.
+        </HeroBody>
+        <HeroButtonsWrapper>
+          <HeroNPMWrapper>
+            <HeroNPMCopy>npm install victory</HeroNPMCopy>
+            <HeroNPMButton onClick={handleCopy}>copy</HeroNPMButton>
+          </HeroNPMWrapper>
+          <HeroDocsButton prefetch to="/docs">
+            Documentation
+          </HeroDocsButton>
+        </HeroButtonsWrapper>
+        <HeroNav>
+          <NavButton
+            onClick={() => setNavExpanded(!navExpanded)}
+            expanded={navExpanded}
+          >
+            <span>Learn More</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z" />
+              <path d="M0 0h24v24H0z" fill="none" />
+            </svg>
+          </NavButton>
+          <NavItems expanded={navExpanded}>
+            <li>
+              <Link prefetch to="/about">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link prefetch to="/docs">
+                Docs
+              </Link>
+            </li>
+            <li>
+              <Link prefetch to="/guides">
+                Guides
+              </Link>
+            </li>
+            <li>
+              <Link prefetch to="/gallery">
+                Gallery
+              </Link>
+            </li>
+            <li>
+              <a title="Support" href="https://spectrum.chat/victory">
+                Support
+              </a>
+            </li>
+            <li>
+              <a
+                title="GitHub"
+                href="https://github.com/FormidableLabs/victory"
+              >
+                GitHub
+              </a>
+            </li>
+            <li>
+              <Link prefetch to="/faq">
+                Faqs
+              </Link>
+            </li>
+          </NavItems>
+        </HeroNav>
+      </HeroContent>
+    </WrapperStyled>
+  );
+};
 
 export default Hero;

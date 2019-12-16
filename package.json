@@ -47,6 +47,7 @@
     "@svgr/webpack": "^2.4.1",
     "autoprefixer": "^9.4.7",
     "babel-cli": "^6.26.0",
+    "babel-plugin-styled-components": "^1.10.6",
     "btoa": "^1.2.1",
     "eslint-config-formidable": "^4.0.0",
     "eslint-config-prettier": "^6.0.0",
