@@ -14,13 +14,13 @@ const VictoryHeader = ({ history }) => {
   return (
     <Header>
       <DropDown>
-        <button
+        <DropDownButton
           onClick={() => setOpenState(!openState)}
           type="button"
           name={`Link dropdown ${openState ? "open" : "close"}`}
         >
           <DropDownBurger src={menuButton} />
-        </button>
+        </DropDownButton>
         {openState && (
           <DropDownContent>
             <Prefetch path="/about">
@@ -140,7 +140,9 @@ const Header = styled.header`
 `;
 
 const VictoryHeading = styled.h1`
-  margin: 1rem 0;
+  margin: 0;
+  padding: 0;
+  line-height: 3rem;
   font-size: 2rem;
   margin-right: ${props => props.theme.gutterSmall};
   font-weight: bold;
@@ -155,6 +157,11 @@ const DropDown = styled.div`
   }
 `;
 
+const DropDownButton = styled.button`
+  display: flex;
+  align-items: center;
+`;
+
 const DropDownBurger = styled(SVG)`
   display: flex;
 `;
@@ -164,7 +171,7 @@ const DropDownContent = styled.div`
   z-index: 1;
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
+  background-color: ${props => props.theme.colors.white}f;
   width: 6rem;
   padding: ${props => props.theme.gutterSmall};
   > a {
@@ -175,17 +182,17 @@ const DropDownContent = styled.div`
 `;
 
 const StyledLink = styled(Link)`
-  color: #4c2e29;
+  color: ${props => props.theme.colors.redBackground};
   ${props =>
     props.matches &&
     css`
-      color: #ff684f;
+      color: $props => props.theme.color.formidaOrange;
       font-weight: bold;
     `}
 `;
 
 const StyledA = styled.a`
-  color: #4c2e29;
+  color: ${props => props.theme.colors.redBackground};
 `;
 
 const FormidableLogoA = styled.a`
@@ -210,6 +217,11 @@ const Icon = styled(SVG)`
   display: flex;
   height: 100%;
   align-items: center;
+  color: $props => props.theme.color.formidaOrange;
+
+  > svg {
+    height: 60%;
+  }
   @media (min-width: ${props => props.theme.tablet}) {
     display: none;
   }
