@@ -8,6 +8,7 @@ const theme = {
 
     white: "#ffffff",
     nearWhite: "#f2f2f2",
+    lightGray: "#f0f0f0",
     gray: "#999999",
     darkGray: "#DDD",
     nearBlack: "#242121",
