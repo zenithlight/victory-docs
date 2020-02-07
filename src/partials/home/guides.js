@@ -10,8 +10,8 @@ import DemoTooltips from "./demo-tooltips";
 import DemoZoom from "./demo-zoom";
 import DemoAnimation from "./demo-animation";
 
-const Benefits = () => (
-  <div className="Benefits">
+const Guides = () => (
+  <div className="Guides">
     <h2 className="u-textCenter">Guides</h2>
     <div className="u-paddingSm">
       <div className="Grid Grid--gutters Grid--full medium-Grid--fit">
@@ -67,12 +67,12 @@ const Benefits = () => (
     </div>
   </div>
 );
-Benefits.propTypes = {
+Guides.propTypes = {
   style: PropTypes.object
 };
 
-Benefits.defaultProps = {
+Guides.defaultProps = {
   style: null
 };
 
-export default Benefits;
+export default Guides;

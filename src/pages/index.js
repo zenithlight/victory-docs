@@ -1,5 +1,5 @@
 import React from "react";
-import Benefits from "../partials/home/benefits";
+import Guides from "../partials/home/guides";
 import Companies from "../partials/home/companies";
 import Hero from "../partials/home/hero";
 import Features from "../partials/home/features";
@@ -12,14 +12,12 @@ const IndexWrapper = styled.div`
 
 const Index = () => (
   <IndexWrapper>
-    <section className="Home playgroundsMaxHeight">
-      <Hero />
-      <Features />
-      <Companies />
+    <Hero />
+    <Features />
+    <Companies />
 
-      <Benefits />
-      <Footer />
-    </section>
+    {/* <Guides /> */}
+    <Footer />
   </IndexWrapper>
 );
 
