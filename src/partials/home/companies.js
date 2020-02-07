@@ -20,7 +20,7 @@ const CompaniesWrapper = styled.section`
   padding: 5rem 0;
 `;
 
-const SubHeading = styled.h2`
+const SectionHeading = styled.h2`
   color: ${({ theme }) => theme.color.darkBrown};
   font-family: Helvetica;
   font-size: 18px;
@@ -44,7 +44,7 @@ const CompaniesList = styled.ul`
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: 1fr;
     grid-gap: 3rem;
-    margin: 10rem;
+    margin: 5rem 10rem;
   }
 `;
 
@@ -73,7 +73,7 @@ const ShowcaseText = styled.span`
 
 const Companies = () => (
   <CompaniesWrapper>
-    <SubHeading>A Few of Our Fans</SubHeading>
+    <SectionHeading>A Few of Our Fans</SectionHeading>
     <CompaniesList>
       <CompanyLogo src={AIRBNB} />
       <CompanyLogo src={FIVETHIRTYEIGHT} />
