@@ -8,6 +8,7 @@ import styled from "styled-components";
 import Footer from "../partials/footer";
 import content from "../partials/home/_content";
 import MoreOss from "../partials/home/more-oss";
+
 const IndexWrapper = styled.div`
   background-color: ${({ theme }) => theme.color.white};
 `;
@@ -19,7 +20,7 @@ const Index = () => (
     <Companies />
     <GetStarted {...content.getStarted} />
     {/* <Guides /> */}
-    <MoreOss ossArray={content.oss} />
+    <MoreOss {...content.oss} />
     <Footer />
   </IndexWrapper>
 );

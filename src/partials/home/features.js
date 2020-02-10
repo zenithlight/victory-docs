@@ -1,9 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-const FeaturesContainer = styled.section`
-  padding-top: 8rem;
-`;
+import { LandingSectionWrapper, LandingSectionContent } from "./styles";
 
 const SectionHeading = styled.h2`
   color: ${({ theme }) => theme.color.darkBrown};
@@ -29,7 +27,6 @@ const FeaturesList = styled.ul`
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 1fr;
     grid-gap: 3rem;
-    margin: 10rem;
   }
 `;
 
@@ -80,27 +77,29 @@ const FeatureText = styled.p`
 `;
 
 const Features = ({ featureArray }) => (
-  <FeaturesContainer>
-    <SectionHeading>Features</SectionHeading>
-    <FeaturesList>
-      {featureArray.map(feature => (
-        <Feature key={feature.title}>
-          <FeatureImg src={feature.icon} />
-          <FeatureTitle>{feature.title}</FeatureTitle>
-          <FeatureText>
-            {feature.description}{" "}
-            {feature.code && (
-              <>
-                <br />
-                {/* explicit className not ideal but had to target the prism style */}
-                <code className="language-bash">{feature.code}</code>
-              </>
-            )}
-          </FeatureText>
-        </Feature>
-      ))}
-    </FeaturesList>
-  </FeaturesContainer>
+  <LandingSectionWrapper>
+    <LandingSectionContent>
+      <SectionHeading>Features</SectionHeading>
+      <FeaturesList>
+        {featureArray.map(feature => (
+          <Feature key={feature.title}>
+            <FeatureImg src={feature.icon} />
+            <FeatureTitle>{feature.title}</FeatureTitle>
+            <FeatureText>
+              {feature.description}{" "}
+              {feature.code && (
+                <>
+                  <br />
+                  {/* explicit className not ideal but had to target the prism style */}
+                  <code className="language-bash">{feature.code}</code>
+                </>
+              )}
+            </FeatureText>
+          </Feature>
+        ))}
+      </FeaturesList>
+    </LandingSectionContent>
+  </LandingSectionWrapper>
 );
 
 Features.propTypes = {

@@ -72,43 +72,49 @@ const content = {
       location: "/docs"
     }
   },
-  oss: [
-    {
-      title: "Spectacle",
-      description:
-        "A React.js based library for creating sleek presentations using JSX syntax that gives you the ability to live demo your code.",
-      logo: require("../../../static/logos/logo-spectacle.png"),
-      link: "https://formidable.com/open-source/spectacle",
-      hasOwnLogo: true
-    },
-    {
-      title: "Development Dashboards",
-      description:
-        "Dashboards to organize and intuitively display your dev server and tooling output.",
-      abbreviation: "Dd",
-      color: "#8bd48b",
-      number: "17",
-      link: "https://formidable.com/open-source/development-dashboards/"
-    },
-    {
-      title: "React Animations",
-      description:
-        "A collection of animations that can be used with many inline style libraries, such as Radium or Aphrodite.",
-      abbreviation: "Ra",
-      color: "#86b9e6",
-      number: "03",
-      link: "https://formidable.com/open-source/react-animations"
-    },
-    {
-      title: "Enzyme Matchers",
-      description:
-        "Run common assertions on your React components using Enzyme in a Jest or Jasmine environment.",
-      abbreviation: "Em",
-      color: "#e48055",
-      number: "09",
-      link: "https://formidable.com/open-source/jest-enzyme/"
+  oss: {
+    ossArray: [
+      {
+        title: "Spectacle",
+        description:
+          "A React.js based library for creating sleek presentations using JSX syntax that gives you the ability to live demo your code.",
+        logo: require("../../../static/logos/logo-spectacle.png"),
+        link: "https://formidable.com/open-source/spectacle",
+        hasOwnLogo: true
+      },
+      {
+        title: "Development Dashboards",
+        description:
+          "Dashboards to organize and intuitively display your dev server and tooling output.",
+        abbreviation: "Dd",
+        color: "#8bd48b",
+        number: "17",
+        link: "https://formidable.com/open-source/development-dashboards/"
+      },
+      {
+        title: "React Animations",
+        description:
+          "A collection of animations that can be used with many inline style libraries, such as Radium or Aphrodite.",
+        abbreviation: "Ra",
+        color: "#86b9e6",
+        number: "03",
+        link: "https://formidable.com/open-source/react-animations"
+      },
+      {
+        title: "Enzyme Matchers",
+        description:
+          "Run common assertions on your React components using Enzyme in a Jest or Jasmine environment.",
+        abbreviation: "Em",
+        color: "#e48055",
+        number: "09",
+        link: "https://formidable.com/open-source/jest-enzyme/"
+      }
+    ],
+    link: {
+      text: "VIEW ALL",
+      location: "https://formidable.com/open-source"
     }
-  ]
+  }
 };
 
 export default content;

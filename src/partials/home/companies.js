@@ -15,12 +15,11 @@ import ZILLOW from "../../../static/logos/logo-zillow.svg";
 import BENAROYA from "../../../static/logos/logo-benaroya.png";
 import styled from "styled-components";
 import importedTheme from "../../styles/theme";
-import { HomeButton } from "./styles";
-
-const CompaniesWrapper = styled.section`
-  background-color: ${({ theme }) => theme.color.lightGray};
-  padding: 5rem 0;
-`;
+import {
+  HomeButton,
+  LandingSectionWrapper,
+  LandingSectionContent
+} from "./styles";
 
 const SectionHeading = styled.h2`
   color: ${({ theme }) => theme.color.darkBrown};
@@ -41,12 +40,11 @@ const CompaniesList = styled.ul`
   grid-template-columns: 1fr;
   grid-auto-rows: auto;
   grid-gap: 4rem;
-  margin: 6rem 0;
+  margin: 5rem 0;
   @media ${({ theme }) => theme.mediaQuery.sm} {
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: 1fr;
     grid-gap: 3rem;
-    margin: 5rem 10rem;
   }
 `;
 
@@ -59,22 +57,24 @@ const CompanyLogo = styled.img`
 `;
 
 const Companies = () => (
-  <CompaniesWrapper>
-    <SectionHeading>A Few of Our Fans</SectionHeading>
-    <CompaniesList>
-      <CompanyLogo src={AIRBNB} />
-      <CompanyLogo src={FIVETHIRTYEIGHT} />
-      <CompanyLogo src={REDFIN} />
-      <CompanyLogo src={USAFACTS} />
-      <CompanyLogo src={VIACOM} />
-      <CompanyLogo src={BENAROYA} />
-      <CompanyLogo src={ZILLOW} />
-      <CompanyLogo src={TUNE} />
-    </CompaniesList>
-    <Link to="/about#showcase">
-      <HomeButton color={importedTheme.color.black}>SEE SHOWCASE</HomeButton>
-    </Link>
-  </CompaniesWrapper>
+  <LandingSectionWrapper bg={importedTheme.color.lightGray}>
+    <LandingSectionContent>
+      <SectionHeading>A Few of Our Fans</SectionHeading>
+      <CompaniesList>
+        <CompanyLogo src={AIRBNB} />
+        <CompanyLogo src={FIVETHIRTYEIGHT} />
+        <CompanyLogo src={REDFIN} />
+        <CompanyLogo src={USAFACTS} />
+        <CompanyLogo src={VIACOM} />
+        <CompanyLogo src={BENAROYA} />
+        <CompanyLogo src={ZILLOW} />
+        <CompanyLogo src={TUNE} />
+      </CompaniesList>
+      <Link to="/about#showcase">
+        <HomeButton color={importedTheme.color.black}>SEE SHOWCASE</HomeButton>
+      </Link>
+    </LandingSectionContent>
+  </LandingSectionWrapper>
 );
 
 Companies.propTypes = {

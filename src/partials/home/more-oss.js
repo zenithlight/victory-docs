@@ -2,44 +2,68 @@ import React from "react";
 import PropTypes from "prop-types";
 import { ProjectBadge } from "formidable-oss-badges";
 import styled from "styled-components";
-import Button from "./styles/home-button";
+import {
+  HomeButton as Button,
+  LandingSectionWrapper,
+  LandingSectionContent
+} from "./styles";
+import { Link } from "react-router-dom";
+import importedTheme from "../../styles/theme";
 
-const OuterWrapper = styled.div`
-  background-color: #000000;
-  background-size: 100% 100%;
-  color: white;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-`;
-
-const OSSCard = styled.div`
-  margin: 0 auto 4rem;
-  max-width: 43rem;
-  position: relative;
-  text-align: left;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  @media (min-width: 768px) {
-    width: calc(1 / 2 * 100% - (1 - 1 / 2) * 80px);
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 6rem;
+const SectionHeading = styled.h2`
+  color: ${({ theme }) => theme.color.white};
+  font-family: Helvetica;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.58;
+  letter-spacing: 0.48px;
+  margin: 0;
+  text-align: center;
+  @media ${({ theme }) => theme.mediaQuery.md} {
+    font-size: 24px;
   }
 `;
 
-const OSSImage = styled.img`
-  left: 0;
-  position: relative;
-  top: 2rem;
-  width: 18rem;
-  max-width: none;
-  padding: 13% 12%;
-  @media (min-width: 1024px) {
-    padding: 14px;
-    width: 14rem;
+const OSSWrapper = styled.ul`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  grid-gap: 4rem;
+  margin: 5rem 0;
+  @media ${({ theme }) => theme.mediaQuery.sm} {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+    grid-gap: 3rem;
+  }
+`;
+
+const OSSItem = styled.div`
+  display: flex;
+  justify-self: ${({ index }) => (index % 2 === 0 ? "right" : "left")};
+  flex-direction: column;
+
+  > a {
+    margin: auto;
+  }
+
+  svg,
+  img {
+    width: 160px;
+    @media ${({ theme }) => theme.mediaQuery.md} {
+      width: 280px;
+    }
+  }
+  @media ${({ theme }) => theme.mediaQuery.sm} {
+    flex-direction: row;
+  }
+`;
+
+const OSSCopyContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  @media ${({ theme }) => theme.mediaQuery.sm} {
+    text-align: left;
   }
 `;
 
@@ -52,62 +76,54 @@ const OSSLink = styled.a`
   }
 `;
 
-const StyledProjectBadge = styled(ProjectBadge)`
-  left: 0;
-  position: relative;
-  top: 2rem;
-  width: 18rem;
-  @media (min-width: 1024px) {
-    width: 14rem;
-  }
+const OSSTitle = styled.h3`
+  font-family: HelveticaNeue;
+  font-size: 18px;
+  font-weight: bold;
 `;
 
-const OSSCopyContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  @media (min-width: 768px) {
-    padding-left: 1rem;
-  }
-
-  @media (min-width: 1024px) {
-    padding-left: 2rem;
-  }
+const OSSText = styled.p`
+  font-family: Helvetica;
+  font-size: 14px;
 `;
 
-const MoreOSS = ({ ossArray }) => (
-  <OuterWrapper>
-    <div>
-      <h2>More Open Source from Formidable</h2>
-      {ossArray.map(card => (
-        <OSSCard key={card.title}>
-          <OSSLink href={card.link}>
-            {card.hasOwnLogo ? (
-              <OSSImage src={card.logo} />
-            ) : (
-              <StyledProjectBadge
-                color={card.color}
-                number={card.number}
-                abbreviation={card.abbreviation}
-                description={card.title}
-              />
-            )}
-          </OSSLink>
-          <OSSCopyContainer>
+const MoreOSS = ({ ossArray, link }) => (
+  <LandingSectionWrapper bg="#000">
+    <LandingSectionContent color={importedTheme.color.white}>
+      <SectionHeading>More Open Source from Formidable</SectionHeading>
+      <OSSWrapper>
+        {ossArray.map((card, index) => (
+          <OSSItem key={card.link} index={index}>
             <OSSLink href={card.link}>
-              <h2>{card.title}</h2>
+              {card.hasOwnLogo ? (
+                <img src={card.logo} />
+              ) : (
+                <ProjectBadge
+                  color={card.color}
+                  number={card.number}
+                  abbreviation={card.abbreviation}
+                  description={card.title}
+                />
+              )}
             </OSSLink>
-            <p>{card.description}</p>
-          </OSSCopyContainer>
-        </OSSCard>
-      ))}
-      <Button light="true" to="https://formidable.com/open-source/">
-        View All
-      </Button>
-    </div>
-  </OuterWrapper>
+            <OSSCopyContainer>
+              <OSSLink href={card.link}>
+                <OSSTitle>{card.title}</OSSTitle>
+              </OSSLink>
+              <OSSText>{card.description}</OSSText>
+            </OSSCopyContainer>
+          </OSSItem>
+        ))}
+      </OSSWrapper>
+      <Link to={link.location}>
+        <Button>{link.text}</Button>
+      </Link>
+    </LandingSectionContent>
+  </LandingSectionWrapper>
 );
 
 MoreOSS.propTypes = {
+  link: PropTypes.shape(),
   ossArray: PropTypes.array
 };
 
