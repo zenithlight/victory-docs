@@ -14,6 +14,8 @@ import TUNE from "../../../static/logos/logo-tune.svg";
 import ZILLOW from "../../../static/logos/logo-zillow.svg";
 import BENAROYA from "../../../static/logos/logo-benaroya.png";
 import styled from "styled-components";
+import importedTheme from "../../styles/theme";
+import { HomeButton } from "./styles";
 
 const CompaniesWrapper = styled.section`
   background-color: ${({ theme }) => theme.color.lightGray};
@@ -56,21 +58,6 @@ const CompanyLogo = styled.img`
   width: 100%;
 `;
 
-const ShowcaseButton = styled.button`
-  background-color: ${({ theme }) => theme.color.white};
-  display: block;
-  height: 40px;
-  margin: auto;
-  width: 200px;
-`;
-
-const ShowcaseText = styled.span`
-  color: #000000;
-  font-family: Helvetica;
-  font-size: 14px;
-  letter-spacing: 1px;
-`;
-
 const Companies = () => (
   <CompaniesWrapper>
     <SectionHeading>A Few of Our Fans</SectionHeading>
@@ -84,11 +71,9 @@ const Companies = () => (
       <CompanyLogo src={ZILLOW} />
       <CompanyLogo src={TUNE} />
     </CompaniesList>
-    <ShowcaseButton>
-      <Link to="/about#showcase" className="isLight">
-        <ShowcaseText>SEE SHOWCASE</ShowcaseText>
-      </Link>
-    </ShowcaseButton>
+    <Link to="/about#showcase">
+      <HomeButton color={importedTheme.color.black}>SEE SHOWCASE</HomeButton>
+    </Link>
   </CompaniesWrapper>
 );
 

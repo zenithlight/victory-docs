@@ -2,21 +2,24 @@ import React from "react";
 import Guides from "../partials/home/guides";
 import Companies from "../partials/home/companies";
 import Hero from "../partials/home/hero";
+import GetStarted from "../partials/home/get-started";
 import Features from "../partials/home/features";
 import styled from "styled-components";
 import Footer from "../partials/footer";
-
+import content from "../partials/home/_content";
+import MoreOss from "../partials/home/more-oss";
 const IndexWrapper = styled.div`
   background-color: ${({ theme }) => theme.color.white};
 `;
 
 const Index = () => (
   <IndexWrapper>
-    <Hero />
-    <Features />
+    <Hero {...content.hero} />
+    <Features featureArray={content.features} />
     <Companies />
-
+    <GetStarted {...content.getStarted} />
     {/* <Guides /> */}
+    <MoreOss ossArray={content.oss} />
     <Footer />
   </IndexWrapper>
 );

@@ -1,16 +1,15 @@
 import React from "react";
-import heroBackground from "../../../static/hero-background.svg";
-import heroBadge from "../../../static/hero-badge.svg";
 // Settings
 import HeroDemo from "./hero-demo";
 import styled from "styled-components";
-import formidableIcon from "../../../static/logos/logo-formidable-icon.svg";
-import { Link } from "react-scroll";
+import PropTypes from "prop-types";
 
 const HeroContainer = styled.section`
   background-image: url(${({ bg }) => bg});
   color: ${({ theme }) => theme.color.white};
   height: 801px;
+  /* used to remove the 1px white border */
+  margin-top: -1px;
 `;
 
 const Corner = styled.div`
@@ -50,16 +49,26 @@ const CenterWrapper = styled.div`
   grid-template-areas: "badge heading" "badge subheading" "badge getstarted";
   margin: 0 20rem;
   padding-top: 20rem;
+
+  > h1,
+  h2 {
+    margin: 0;
+  }
 `;
 
 const HeroBadge = styled.img`
   align-self: center;
+  justify-self: center;
   grid-area: badge;
 `;
 
 const SectionHeading = styled.h1`
   align-self: center;
+  font-family: Helvetica;
+  font-size: 80px;
+  font-weight: bold;
   grid-area: heading;
+  letter-spacing: 12.41px;
 `;
 
 const SectionSubHeading = styled.h2`
@@ -86,54 +95,29 @@ const LinkItem = styled.a`
   justify-self: center;
 `;
 
-const LINKS = [
-  {
-    text: "ABOUT",
-    location: "/about"
-  },
-  {
-    text: "DOCS",
-    location: "/docs"
-  },
-  {
-    text: "GUIDES",
-    location: "/docs"
-  },
-  {
-    text: "GALLERY",
-    location: "/gallery"
-  },
-  {
-    text: "SUPPORT",
-    location: "https://spectrum.chat/victory"
-  },
-  {
-    text: "GITHUB",
-    location: "https://github.com/FormidableLabs/victory"
-  },
-  {
-    text: "FAQS",
-    location: "https://github.com/FormidableLabs/victory"
-  }
-];
-
-const Hero = () => (
+const Hero = ({
+  background,
+  badge,
+  code,
+  cornerIcon,
+  cornerText,
+  description,
+  linksArray
+}) => (
   <>
-    <HeroContainer bg={heroBackground}>
+    <HeroContainer bg={background}>
       <Corner>
-        <CornerText>{"ANOTHER OSS \n PROJECT BY"}</CornerText>
-        <CornerF src={formidableIcon} />
+        <CornerText>{cornerText}</CornerText>
+        <CornerF src={cornerIcon} />
       </Corner>
       <CenterWrapper>
-        <HeroBadge src={heroBadge} />
-        <SectionHeading>Victory</SectionHeading>
-        <SectionSubHeading>
-          React.js components for modular charting and data visualization.
-        </SectionSubHeading>
-        <GetStarted>npm install here</GetStarted>
+        <HeroBadge src={badge} />
+        <SectionHeading>VICTORY</SectionHeading>
+        <SectionSubHeading>{description}</SectionSubHeading>
+        <GetStarted>{code}</GetStarted>
       </CenterWrapper>
       <LinkContainer>
-        {LINKS.map(a => (
+        {linksArray.map(a => (
           <LinkItem key={a.text}>{a.text}</LinkItem>
         ))}
       </LinkContainer>
@@ -141,5 +125,21 @@ const Hero = () => (
     <HeroDemo />
   </>
 );
+
+const linkPropType = PropTypes.shape({
+  text: PropTypes.string,
+  location: PropTypes.string
+});
+
+Hero.propTypes = {
+  background: PropTypes.string,
+  badge: PropTypes.string,
+  code: PropTypes.string,
+  cornerIcon: PropTypes.string,
+  cornerText: PropTypes.string,
+  description: PropTypes.string,
+  link: linkPropType,
+  linksArray: PropTypes.arrayOf(linkPropType)
+};
 
 export default Hero;

@@ -1,9 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Robust from "../../../static/feature-1.svg";
-import Flexible from "../../../static/feature-2.svg";
-import Native from "../../../static/feature-3.png";
-
+import PropTypes from "prop-types";
 const FeaturesContainer = styled.section`
   padding-top: 8rem;
 `;
@@ -82,36 +79,32 @@ const FeatureText = styled.p`
   }
 `;
 
-export default () => (
+const Features = ({ featureArray }) => (
   <FeaturesContainer>
     <SectionHeading>Features</SectionHeading>
     <FeaturesList>
-      <Feature>
-        <FeatureImg src={Robust} />
-        <FeatureTitle>Robust</FeatureTitle>
-        <FeatureText>
-          Area charts. Scatter plots. Voronoi polygons. Easy-to-use components
-          for complex charting.
-        </FeatureText>
-      </Feature>
-      <Feature>
-        <FeatureImg src={Flexible} />
-        <FeatureTitle>Flexible</FeatureTitle>
-        <FeatureText>
-          Fully contained, reusable data visualization elements are responsible
-          for their own styles and behaviors.
-        </FeatureText>
-      </Feature>
-      <Feature>
-        <FeatureImg src={Native} />
-        <FeatureTitle>Native</FeatureTitle>
-        <FeatureText>
-          Extend the Victory experience on Android and iOS platforms with an
-          identical&nbsp;API. <br />
-          {/* explicit className not ideal but had to target the prism styile */}
-          <code className="language-bash">npm install victory-native</code>
-        </FeatureText>
-      </Feature>
+      {featureArray.map(feature => (
+        <Feature key={feature.title}>
+          <FeatureImg src={feature.icon} />
+          <FeatureTitle>{feature.title}</FeatureTitle>
+          <FeatureText>
+            {feature.description}{" "}
+            {feature.code && (
+              <>
+                <br />
+                {/* explicit className not ideal but had to target the prism style */}
+                <code className="language-bash">{feature.code}</code>
+              </>
+            )}
+          </FeatureText>
+        </Feature>
+      ))}
     </FeaturesList>
   </FeaturesContainer>
 );
+
+Features.propTypes = {
+  featureArray: PropTypes.arrayOf(PropTypes.shape())
+};
+
+export default Features;
