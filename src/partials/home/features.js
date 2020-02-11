@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { LandingSectionWrapper, LandingSectionContent } from "./styles";
+import { Element } from "react-scroll";
 
 const SectionHeading = styled.h2`
   color: ${({ theme }) => theme.color.darkBrown};
-  font-family: Helvetica;
   font-size: 24px;
   font-weight: bold;
   line-height: 1.06;
@@ -64,7 +64,6 @@ const FeatureTitle = styled.h3`
 `;
 
 const FeatureText = styled.p`
-  font-family: Helvetica;
   font-size: 14px;
   line-height: 1.29;
   @media ${({ theme }) => theme.mediaQuery.sm} {
@@ -79,7 +78,9 @@ const FeatureText = styled.p`
 const Features = ({ featureArray }) => (
   <LandingSectionWrapper>
     <LandingSectionContent>
-      <SectionHeading>Features</SectionHeading>
+      <Element name="Features">
+        <SectionHeading>Features</SectionHeading>
+      </Element>
       <FeaturesList>
         {featureArray.map(feature => (
           <Feature key={feature.title}>

@@ -3,7 +3,9 @@ import React from "react";
 import HeroDemo from "./hero-demo";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { LandingSectionContent } from "./styles";
+import { LandingSectionContent, LinkButton } from "./styles";
+import importedTheme from "../../styles/theme";
+import { Link } from "react-scroll";
 
 const HeroContainer = styled.section`
   background-image: url(${({ bg }) => bg});
@@ -39,7 +41,6 @@ const Corner = styled.div`
 
 const CornerText = styled.p`
   color: ${({ theme }) => theme.color.nearBlack};
-  font-family: Helvetica;
   font-size: 8px;
   font-weight: normal;
   font-stretch: normal;
@@ -70,8 +71,8 @@ const CenterWrapper = styled.div`
   display: grid;
 
   margin-top: 7rem;
-  padding-bottom: 6rem;
-  grid-row-gap: 5rem;
+  padding-bottom: 4rem;
+  grid-row-gap: 4rem;
   grid-template-areas: "badge" "heading" "subheading" "getstarted";
   grid-template-columns: 1fr;
   grid-auto-rows: auto;
@@ -82,17 +83,18 @@ const CenterWrapper = styled.div`
   }
 
   @media ${({ theme }) => theme.mediaQuery.sm} {
-    margin-top: 14rem;
     grid-template-areas: "badge heading" "badge subheading" "badge getstarted";
     grid-auto-columns: auto;
     grid-column-gap: 5rem;
+    grid-row-gap: 1rem;
     grid-template-columns: auto 1fr;
     grid-template-rows: repeat(3, 1fr);
+    margin-top: 14rem;
+    padding-bottom: 8rem;
   }
   @media ${({ theme }) => theme.mediaQuery.md} {
     grid-column-gap: 10rem;
     margin-top: 15rem;
-    padding-bottom: 4rem;
   }
 `;
 
@@ -113,28 +115,41 @@ const HeroBadge = styled.img`
 const SectionHeading = styled.h1`
   align-self: center;
   justify-self: center;
-  font-family: Helvetica;
   font-size: 30px;
   font-weight: bold;
   grid-area: heading;
-  letter-spacing: 12.41px;
+  letter-spacing: 6px;
   @media ${({ theme }) => theme.mediaQuery.sm} {
     font-size: 48px;
     justify-self: left;
+    letter-spacing: 9px;
   }
   @media ${({ theme }) => theme.mediaQuery.md} {
     font-size: 80px;
+    letter-spacing: 12.41px;
   }
 `;
 
 const SectionSubHeading = styled.h2`
   align-self: center;
+  font-size: 18px;
   grid-area: subheading;
+  line-height: 1.67;
+  @media ${({ theme }) => theme.mediaQuery.sm} {
+    font-size: 24px;
+    line-height: 1.25;
+  }
 `;
 
 const GetStarted = styled.div`
   align-self: center;
+  display: flex;
+  flex-direction: column;
   grid-area: getstarted;
+
+  @media ${({ theme }) => theme.mediaQuery.md} {
+    flex-direction: row;
+  }
 `;
 
 const LinkContainer = styled.div`
@@ -154,6 +169,30 @@ const LinkItem = styled.a`
   justify-self: center;
 `;
 
+const LearnMore = styled(Link)`
+  display: block;
+  color: ${({ theme }) => theme.color.white};
+  font-size: 14px;
+  margin: auto;
+  line-height: 2.29;
+  letter-spacing: 0.88px;
+  text-align: center;
+
+  &::after {
+    border-top: 2.5px solid white;
+    border-right: 2.5px solid white;
+    content: "";
+    display: inline-block;
+    height: 12px;
+    margin: 2rem 0 0.2rem 2rem;
+    width: 12px;
+    transform: rotate(135deg);
+  }
+  @media ${({ theme }) => theme.mediaQuery.sm} {
+    display: none;
+  }
+`;
+
 const Hero = ({
   background,
   badge,
@@ -161,7 +200,8 @@ const Hero = ({
   cornerIcon,
   cornerText,
   description,
-  linksArray
+  linksArray,
+  link
 }) => (
   <>
     <HeroContainer bg={background}>
@@ -174,15 +214,25 @@ const Hero = ({
           <HeroBadge src={badge} />
           <SectionHeading>VICTORY</SectionHeading>
           <SectionSubHeading>{description}</SectionSubHeading>
-          <GetStarted>{code}</GetStarted>
+          <GetStarted>
+            {code}
+            <LinkButton
+              to={link.location}
+              bg={importedTheme.color.red}
+              width="100%"
+            >
+              {link.text}
+            </LinkButton>
+          </GetStarted>
         </CenterWrapper>
         <LinkContainer>
-          {linksArray.map(link => (
-            <LinkItem key={link.text} href={link.location}>
-              {link.text}
+          {linksArray.map(l => (
+            <LinkItem key={l.text} href={l.location}>
+              {l.text}
             </LinkItem>
           ))}
         </LinkContainer>
+        <LearnMore to="Features">LEARN MORE</LearnMore>
       </LandingSectionContent>
     </HeroContainer>
     <HeroDemo />

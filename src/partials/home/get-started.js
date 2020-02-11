@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { HomeButton } from "./styles";
+import { LinkButton } from "./styles";
 import importedTheme from "../../styles/theme";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -39,9 +39,9 @@ const GetStarted = ({ description, link }) => {
         <SectionHeading>Get Started</SectionHeading>
         <SectionDescription>{description}</SectionDescription>
         <Link to={link.location}>
-          <HomeButton color={importedTheme.color.darkBrown}>
+          <LinkButton color={importedTheme.color.darkBrown}>
             {link.text}
-          </HomeButton>
+          </LinkButton>
         </Link>
       </GetStartedContainer>
       <Stripe bg={importedTheme.color.brown} />

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { ProjectBadge } from "formidable-oss-badges";
 import styled from "styled-components";
 import {
-  HomeButton as Button,
+  LinkButton,
   LandingSectionWrapper,
   LandingSectionContent
 } from "./styles";
@@ -12,7 +12,6 @@ import importedTheme from "../../styles/theme";
 
 const SectionHeading = styled.h2`
   color: ${({ theme }) => theme.color.white};
-  font-family: Helvetica;
   font-size: 18px;
   font-weight: bold;
   line-height: 1.58;
@@ -83,7 +82,6 @@ const OSSTitle = styled.h3`
 `;
 
 const OSSText = styled.p`
-  font-family: Helvetica;
   font-size: 14px;
 `;
 
@@ -115,9 +113,7 @@ const MoreOSS = ({ ossArray, link }) => (
           </OSSItem>
         ))}
       </OSSWrapper>
-      <Link to={link.location}>
-        <Button>{link.text}</Button>
-      </Link>
+      <LinkButton to={link.location}>{link.text}</LinkButton>
     </LandingSectionContent>
   </LandingSectionWrapper>
 );

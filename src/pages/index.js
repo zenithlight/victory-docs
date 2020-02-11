@@ -18,8 +18,8 @@ const Index = () => (
     <Hero {...content.hero} />
     <Features featureArray={content.features} />
     <Companies />
+    <Guides />
     <GetStarted {...content.getStarted} />
-    {/* <Guides /> */}
     <MoreOss {...content.oss} />
     <Footer />
   </IndexWrapper>

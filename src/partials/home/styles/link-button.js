@@ -1,15 +1,17 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-const HomeButton = styled.button`
+const LinkButton = styled(Link)`
   background-color: ${({ bg, theme }) => bg || theme.color.white};
   color: ${({ color, theme }) => color || theme.color.black};
   display: block;
-  font-family: Helvetica;
   font-size: 14px;
   height: 40px;
+  line-height: 40px;
   margin: auto;
   letter-spacing: 1px;
-  width: ${({ width }) => width || 200}px;
+  width: ${({ width }) => width || "200px"};
+  text-align: center;
 `;
 
-export default HomeButton;
+export default LinkButton;

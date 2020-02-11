@@ -16,14 +16,13 @@ import BENAROYA from "../../../static/logos/logo-benaroya.png";
 import styled from "styled-components";
 import importedTheme from "../../styles/theme";
 import {
-  HomeButton,
+  LinkButton,
   LandingSectionWrapper,
   LandingSectionContent
 } from "./styles";
 
 const SectionHeading = styled.h2`
   color: ${({ theme }) => theme.color.darkBrown};
-  font-family: Helvetica;
   font-size: 18px;
   font-weight: bold;
   line-height: 1.58;
@@ -70,9 +69,9 @@ const Companies = () => (
         <CompanyLogo src={ZILLOW} />
         <CompanyLogo src={TUNE} />
       </CompaniesList>
-      <Link to="/about#showcase">
-        <HomeButton color={importedTheme.color.black}>SEE SHOWCASE</HomeButton>
-      </Link>
+      <LinkButton to="/about#showcase" color={importedTheme.color.black}>
+        SEE SHOWCASE
+      </LinkButton>
     </LandingSectionContent>
   </LandingSectionWrapper>
 );
