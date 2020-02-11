@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import { LandingSectionContent, LinkButton } from "./styles";
 import importedTheme from "../../styles/theme";
 import { Link } from "react-scroll";
+import NpmCopy from "./npm-copy";
 
 const HeroContainer = styled.section`
   background-image: url(${({ bg }) => bg});
@@ -70,9 +71,9 @@ const CenterWrapper = styled.div`
   border-bottom: 2px solid ${({ theme }) => theme.color.red};
   display: grid;
 
-  margin-top: 7rem;
+  margin-top: 6rem;
   padding-bottom: 4rem;
-  grid-row-gap: 4rem;
+  grid-row-gap: 3.5rem;
   grid-template-areas: "badge" "heading" "subheading" "getstarted";
   grid-template-columns: 1fr;
   grid-auto-rows: auto;
@@ -89,11 +90,11 @@ const CenterWrapper = styled.div`
     grid-row-gap: 1rem;
     grid-template-columns: auto 1fr;
     grid-template-rows: repeat(3, 1fr);
-    margin-top: 14rem;
+    margin-top: 10rem;
     padding-bottom: 6rem;
   }
   @media ${({ theme }) => theme.mediaQuery.md} {
-    grid-column-gap: 10rem;
+    grid-column-gap: 8rem;
     margin-top: 15rem;
     padding-bottom: 8rem;
   }
@@ -103,7 +104,7 @@ const HeroBadge = styled.img`
   align-self: center;
   justify-self: center;
   grid-area: badge;
-  width: 130px;
+  width: 180px;
   @media ${({ theme }) => theme.mediaQuery.sm} {
     justify-self: left;
     width: 215px;
@@ -147,9 +148,15 @@ const GetStarted = styled.div`
   display: flex;
   flex-direction: column;
   grid-area: getstarted;
+  grid-template-columns: 1fr;
+  align-items: center;
 
+  @media ${({ theme }) => theme.mediaQuery.sm} {
+    align-items: start;
+  }
   @media ${({ theme }) => theme.mediaQuery.md} {
     flex-direction: row;
+    grid-template-columns: 1fr 1fr;
   }
 `;
 
@@ -168,6 +175,18 @@ const LinkContainer = styled.div`
 const LinkItem = styled.a`
   color: ${({ theme }) => theme.color.white};
   justify-self: center;
+`;
+
+const StyledLinkButton = styled(LinkButton)`
+  margin-top: 1.2rem;
+  @media ${({ theme }) => theme.mediaQuery.sm} {
+    width: 300px;
+  }
+  @media ${({ theme }) => theme.mediaQuery.md} {
+    margin-top: 0;
+    margin-left: 2rem;
+    width: 200px;
+  }
 `;
 
 const LearnMore = styled(Link)`
@@ -216,14 +235,15 @@ const Hero = ({
           <SectionHeading>VICTORY</SectionHeading>
           <SectionSubHeading>{description}</SectionSubHeading>
           <GetStarted>
-            {code}
-            <LinkButton
+            <NpmCopy text={code} />
+            <StyledLinkButton
               to={link.location}
               bg={importedTheme.color.red}
               width="100%"
+              noMargin
             >
               {link.text}
-            </LinkButton>
+            </StyledLinkButton>
           </GetStarted>
         </CenterWrapper>
         <LinkContainer>

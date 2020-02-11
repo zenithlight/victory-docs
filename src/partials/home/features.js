@@ -36,14 +36,20 @@ const FeaturesList = styled.ul`
 
 const Feature = styled.div`
   justify-self: center;
-  width: 160px;
-  @media ${({ theme }) => theme.mediaQuery.md} {
-    width: 280px;
+  padding: 0 2rem;
+  @media ${({ theme }) => theme.mediaQuery.sm} {
+    padding: 0;
   }
 `;
 
 const FeatureImg = styled.img`
   ${DropShadow}
+  display: block;
+  margin: auto;
+  width: 160px;
+  @media ${({ theme }) => theme.mediaQuery.md} {
+    width: 280px;
+  }
 `;
 
 const FeatureTitle = styled.h3`

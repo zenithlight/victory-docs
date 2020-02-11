@@ -8,7 +8,7 @@ const LinkButton = styled(Link)`
   font-size: 14px;
   height: 40px;
   line-height: 40px;
-  margin: auto;
+  margin: ${({ noMargin }) => noMargin || "auto"};
   letter-spacing: 1px;
   width: ${({ width }) => width || "200px"};
   text-align: center;

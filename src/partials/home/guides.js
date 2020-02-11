@@ -47,9 +47,9 @@ const GuidesList = styled.ul`
 const GuideDemo = styled.div`
   ${DropShadow}
   overflow: hidden;
-  height: 210px;
+  height: 195px;
   margin: auto;
-  width: 270px;
+  width: 250px;
 
   background-color: #531f17;
 

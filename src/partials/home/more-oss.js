@@ -7,7 +7,6 @@ import {
   LandingSectionWrapper,
   LandingSectionContent
 } from "./styles";
-import { Link } from "react-router-dom";
 import importedTheme from "../../styles/theme";
 
 const SectionHeading = styled.h2`
@@ -62,6 +61,7 @@ const OSSCopyContainer = styled.div`
   flex-direction: column;
   text-align: center;
   @media ${({ theme }) => theme.mediaQuery.sm} {
+    justify-content: center;
     text-align: left;
   }
 `;
@@ -82,7 +82,10 @@ const OSSTitle = styled.h3`
 `;
 
 const OSSText = styled.p`
-  font-size: 14px;
+  font-size: 12px;
+  @media ${({ theme }) => theme.mediaQuery.sm} {
+    font-size: 14px;
+  }
 `;
 
 const MoreOSS = ({ ossArray, link }) => (
