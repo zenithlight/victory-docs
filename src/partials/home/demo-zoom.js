@@ -38,7 +38,7 @@ export default class App extends React.Component {
   render() {
     const styles = this.getStyles();
     return (
-      <div className="Benefits-demo fancyBorder">
+      <>
         <VictoryChart
           padding={{
             left: 50,
@@ -168,7 +168,7 @@ export default class App extends React.Component {
             ]}
           />
         </VictoryChart>
-      </div>
+      </>
     );
   }
 }

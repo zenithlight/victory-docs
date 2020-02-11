@@ -2,7 +2,11 @@ import React from "react";
 // import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-import { LandingSectionWrapper, LandingSectionContent } from "./styles";
+import {
+  LandingSectionWrapper,
+  LandingSectionContent,
+  DropShadow
+} from "./styles";
 
 // Demos
 import DemoCustomChart from "./demo-custom-chart";
@@ -40,10 +44,29 @@ const GuidesList = styled.ul`
   }
 `;
 
-const Guide = styled.div``;
+const GuideDemo = styled.div`
+  ${DropShadow}
+  overflow: hidden;
+  height: 210px;
+  margin: auto;
+  width: 270px;
+
+  background-color: #531f17;
+
+  @media ${({ theme }) => theme.mediaQuery.md} {
+    height: 350px
+    width: 450px;
+  }
+
+`;
 const GuideLink = styled(Link)`
-  font-size: 14px;
-  line-height: 1.29;
+  color: ${({ theme }) => theme.color.darkBrown};
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 4rem;
+  text-align: center;
+
   @media ${({ theme }) => theme.mediaQuery.sm} {
     line-height: 1.29;
   }
@@ -58,32 +81,44 @@ const Guides = () => (
     <LandingSectionContent>
       <SectionHeading>Guides</SectionHeading>
       <GuidesList>
-        <Guide>
-          <DemoCustomChart />
+        <div>
+          <GuideDemo>
+            <DemoCustomChart />
+          </GuideDemo>
           <GuideLink to="/guides/custom-charts">Custom Charts</GuideLink>
-        </Guide>
-        <Guide>
-          <DemoZoom />
+        </div>
+        <div>
+          <GuideDemo>
+            <DemoZoom />
+          </GuideDemo>
           <GuideLink to="/guides/brush-and-zoom">Brush and Zoom</GuideLink>
-        </Guide>
-        <Guide>
-          <DemoCustomComponents />
+        </div>
+        <div>
+          <GuideDemo>
+            <DemoCustomComponents />
+          </GuideDemo>
           <GuideLink to="/guides/custom-components">
             Custom Components
           </GuideLink>
-        </Guide>
-        <Guide>
-          <DemoTooltips />
+        </div>
+        <div>
+          <GuideDemo>
+            <DemoTooltips />
+          </GuideDemo>
           <GuideLink to="/guides/tooltips">Tooltips</GuideLink>
-        </Guide>
-        <Guide>
-          <DemoSharedEvents />
+        </div>
+        <div>
+          <GuideDemo>
+            <DemoSharedEvents />
+          </GuideDemo>
           <GuideLink to="/guides/events">Events</GuideLink>
-        </Guide>
-        <Guide>
-          <DemoAnimation />
+        </div>
+        <div>
+          <GuideDemo>
+            <DemoAnimation />
+          </GuideDemo>
           <GuideLink to="/guides/animations">Animations</GuideLink>
-        </Guide>
+        </div>
       </GuidesList>
     </LandingSectionContent>
   </LandingSectionWrapper>

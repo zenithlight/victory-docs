@@ -75,24 +75,22 @@ export default class App extends React.Component {
     const styles = this.getStyles();
 
     return (
-      <div className="Benefits-demo fancyBorder">
-        <VictoryChart
-          style={{ parent: styles.parent }}
-          width={450}
-          height={350}
-          animate={{ duration: 2000 }}
-        >
-          <VictoryScatter
-            data={this.state.scatterData}
-            style={{
-              data: {
-                fill: ({ datum }) => datum.fill,
-                opacity: 0.6
-              }
-            }}
-          />
-        </VictoryChart>
-      </div>
+      <VictoryChart
+        style={{ parent: styles.parent }}
+        width={450}
+        height={350}
+        animate={{ duration: 2000 }}
+      >
+        <VictoryScatter
+          data={this.state.scatterData}
+          style={{
+            data: {
+              fill: ({ datum }) => datum.fill,
+              opacity: 0.6
+            }
+          }}
+        />
+      </VictoryChart>
     );
   }
 }

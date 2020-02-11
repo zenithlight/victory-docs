@@ -90,11 +90,12 @@ const CenterWrapper = styled.div`
     grid-template-columns: auto 1fr;
     grid-template-rows: repeat(3, 1fr);
     margin-top: 14rem;
-    padding-bottom: 8rem;
+    padding-bottom: 6rem;
   }
   @media ${({ theme }) => theme.mediaQuery.md} {
     grid-column-gap: 10rem;
     margin-top: 15rem;
+    padding-bottom: 8rem;
   }
 `;
 

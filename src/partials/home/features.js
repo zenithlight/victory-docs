@@ -1,7 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { LandingSectionWrapper, LandingSectionContent } from "./styles";
+import {
+  LandingSectionWrapper,
+  LandingSectionContent,
+  DropShadow
+} from "./styles";
 import { Element } from "react-scroll";
 
 const SectionHeading = styled.h2`
@@ -39,11 +43,7 @@ const Feature = styled.div`
 `;
 
 const FeatureImg = styled.img`
-  width: 100%;
-  box-shadow: -12px 12px ${({ theme }) => theme.color.brown};
-  @media ${({ theme }) => theme.mediaQuery.sm} {
-    box-shadow: -20px 20px ${({ theme }) => theme.color.brown};
-  }
+  ${DropShadow}
 `;
 
 const FeatureTitle = styled.h3`
