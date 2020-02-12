@@ -24,7 +24,7 @@ const content = {
       },
       {
         text: "GUIDES",
-        location: "/docs"
+        location: "/guides"
       },
       {
         text: "GALLERY",
