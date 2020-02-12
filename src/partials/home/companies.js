@@ -1,9 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 
-// Common
-import Icon from "../icon";
 // Assets
 import VIACOM from "../../../static/logos/logo-viacom.svg";
 import FIVETHIRTYEIGHT from "../../../static/logos/logo-fivethirtyeight.svg";
