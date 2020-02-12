@@ -28,7 +28,8 @@ const SectionHeading = styled.h2`
 `;
 
 const SectionDescription = styled.p`
-  margin: 0;
+  margin: 0 0 5rem 0;
+  padding: 0 10rem;
 `;
 
 const GetStarted = ({ description, link }) => {
