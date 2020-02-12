@@ -2,7 +2,6 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { LinkButton } from "./styles";
 import importedTheme from "../../styles/theme";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 const stripeStyle = css`
   content: "";
@@ -38,11 +37,9 @@ const GetStarted = ({ description, link }) => {
       <GetStartedContainer>
         <SectionHeading>Get Started</SectionHeading>
         <SectionDescription>{description}</SectionDescription>
-        <Link to={link.location}>
-          <LinkButton color={importedTheme.color.darkBrown}>
-            {link.text}
-          </LinkButton>
-        </Link>
+        <LinkButton to={link.location} color={importedTheme.color.darkBrown}>
+          {link.text}
+        </LinkButton>
       </GetStartedContainer>
       <Stripe bg={importedTheme.color.brown} />
       <Stripe bg={importedTheme.color.otherBrown} />

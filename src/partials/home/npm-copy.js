@@ -20,8 +20,8 @@ const HeroNPMWrapper = styled.div`
 const HeroNPMCopy = styled.p`
   width: 22rem;
   height: 4rem;
-  color: #383838;
-  background-color: #d5d5d5;
+  color: #000;
+  background-color: ${({ theme }) => theme.color.white};
   color: black;
   text-align: left;
   padding: 0.33rem 1.5rem;
@@ -48,7 +48,7 @@ const HeroNPMButton = styled.button`
   text-transform: uppercase;
   cursor: copy;
   &:hover {
-    background: ${({ theme }) => theme.color.white};
+    background: ${({ theme }) => theme.color.lightGray};
   }
 `;
 

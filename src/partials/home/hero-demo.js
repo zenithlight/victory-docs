@@ -76,6 +76,23 @@ const data = [
   { x: 51, y: 17 }
 ];
 
+const font = color => ({
+  fill: color || importedTheme.color.brown,
+  fontSize: 20,
+  fontFamily: "Helvetica"
+});
+
+const axisLineProps = strokeWidth => ({
+  dependentAxis: true,
+  style: {
+    axis: {
+      stroke: importedTheme.color.red,
+      ...(strokeWidth ? { strokeWidth } : {})
+    }
+  },
+  tickFormat: () => ""
+});
+
 const HeroDemo = () => (
   <HeroDemoContainer>
     <VictoryChart
@@ -90,7 +107,69 @@ const HeroDemo = () => (
         }
       }}
     >
-      <VictoryLabel text="label test" textAnchor="start" />
+      <VictoryLabel
+        text="JUL 2015"
+        textAnchor="end"
+        style={font()}
+        x={40}
+        y={190}
+      />
+      <VictoryLabel
+        text="PROJECT START"
+        textAnchor="end"
+        style={font()}
+        x={40}
+        y={215}
+      />
+      <VictoryLabel
+        text="TODAY"
+        textAnchor="start"
+        style={font()}
+        x={1560}
+        y={190}
+      />
+      <VictoryLabel
+        text="V2.3"
+        textAnchor="start"
+        style={font()}
+        x={1560}
+        y={215}
+      />
+      <VictoryLabel
+        text="V2.3"
+        textAnchor="start"
+        style={font(importedTheme.color.red)}
+        x={1380}
+        y={35}
+      />
+      <VictoryLabel
+        text="V2"
+        textAnchor="start"
+        style={{ ...font(importedTheme.color.red), fontWeight: "bold" }}
+        x={1020}
+        y={35}
+      />
+      <VictoryLabel
+        text="1,062"
+        textAnchor="start"
+        style={font(importedTheme.color.white)}
+        x={415}
+        y={30}
+      />
+      <VictoryLabel
+        text="232"
+        textAnchor="start"
+        style={font(importedTheme.color.white)}
+        x={1450}
+        y={160}
+      />
+      <VictoryLabel
+        text="460 COMMITS"
+        textAnchor="start"
+        style={font(importedTheme.color.white)}
+        x={1560}
+        y={105}
+      />
       <VictoryLine
         data={data}
         style={{
@@ -98,29 +177,38 @@ const HeroDemo = () => (
         }}
       />
       <VictoryScatter
-        data={data.filter(d => d.x === 51)}
+        data={data.filter(d => [14, 48, 51].includes(d.x))}
         size={5}
         style={{
-          data: { fill: importedTheme.color.white },
-          labels: {
-            fontSize: 25,
-            fill: importedTheme.color.white
-          }
+          data: { fill: importedTheme.color.white }
         }}
-        labels={["490 COMMITS"]}
-        labelComponent={<VictoryLabel x={1640} y={120} />}
       />
       <VictoryAxis
         dependentAxis
         tickFormat={() => ""}
         style={{ axis: { stroke: "none" } }}
-        label="test axis"
       />
       <VictoryAxis
-        maxDomain={{ x: 3 }}
         tickFormat={() => ""}
+        style={{ axis: { stroke: importedTheme.color.brown } }}
         // style={{ axis: { stroke: "none" } }}
       />
+      <VictoryAxis {...axisLineProps()} offsetX={80} />
+      <VictoryAxis {...axisLineProps(3)} offsetX={150} />
+      <VictoryAxis {...axisLineProps()} offsetX={280} />
+      <VictoryAxis {...axisLineProps(3)} offsetX={340} />
+      <VictoryAxis {...axisLineProps()} offsetX={610} />
+      <VictoryAxis {...axisLineProps()} offsetX={640} />
+      <VictoryAxis {...axisLineProps()} offsetX={650} />
+      <VictoryAxis {...axisLineProps()} offsetX={730} />
+      <VictoryAxis {...axisLineProps()} offsetX={790} />
+      <VictoryAxis {...axisLineProps()} offsetX={810} />
+      <VictoryAxis {...axisLineProps()} offsetX={1000} />
+      <VictoryAxis {...axisLineProps()} offsetX={1000} />
+      <VictoryAxis {...axisLineProps(3)} offsetX={1030} />
+      <VictoryAxis {...axisLineProps()} offsetX={1090} />
+      <VictoryAxis {...axisLineProps()} offsetX={1230} />
+      <VictoryAxis {...axisLineProps()} offsetX={1400} />
     </VictoryChart>
   </HeroDemoContainer>
 );
