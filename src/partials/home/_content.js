@@ -78,37 +78,34 @@ const content = {
       {
         title: "Spectacle",
         description:
-          "A React.js based library for creating sleek presentations using JSX syntax that gives you the ability to live demo your code.",
-        logo: require("../../../static/logos/logo-spectacle.png"),
+          "A React.js based library for creating sleek presentations using JSX syntax with the ability to live demo your code!",
+        logo: require("../../../static/logos/logo-spectacle.svg"),
         link: "https://formidable.com/open-source/spectacle",
         hasOwnLogo: true
       },
       {
-        title: "Development Dashboards",
+        title: "Urql",
         description:
-          "Dashboards to organize and intuitively display your dev server and tooling output.",
-        abbreviation: "Dd",
-        color: "#8bd48b",
-        number: "17",
-        link: "https://formidable.com/open-source/development-dashboards/"
+          "Universal React Query Library is a blazing-fast GraphQL client, exposed as a set of ReactJS components.",
+        logo: require("../../../static/logos/logo-urql.svg"),
+        link: "https://formidable.com/open-source/urql",
+        hasOwnLogo: true
       },
       {
-        title: "React Animations",
+        title: "Renature",
         description:
-          "A collection of animations that can be used with many inline style libraries, such as Radium or Aphrodite.",
-        abbreviation: "Ra",
-        color: "#86b9e6",
-        number: "03",
-        link: "https://formidable.com/open-source/react-animations"
+          "A physics-based animation library for React inspired by the natural world.",
+        logo: require("../../../static/logos/logo-renature.svg"),
+        link: "https://formidable.com/open-source/renature",
+        hasOwnLogo: true
       },
       {
-        title: "Enzyme Matchers",
+        title: "Runpkg",
         description:
-          "Run common assertions on your React components using Enzyme in a Jest or Jasmine environment.",
-        abbreviation: "Em",
-        color: "#e48055",
-        number: "09",
-        link: "https://formidable.com/open-source/jest-enzyme/"
+          "Explore, learn about, and perform static analysis on npm packages in the browser.          ",
+        logo: require("../../../static/logos/logo-runpkg.svg"),
+        link: "https://formidable.com/open-source/runpkg",
+        hasOwnLogo: true
       }
     ],
     link: {

@@ -35,20 +35,24 @@ const OSSWrapper = styled.ul`
   }
 `;
 
-const OSSItem = styled.div`
+const OSSItem = styled.li`
   display: flex;
   justify-self: ${({ index }) => (index % 2 === 0 ? "right" : "left")};
   flex-direction: column;
 
   > a {
     margin: auto;
+    padding: 0;
+    @media ${({ theme }) => theme.mediaQuery.sm} {
+      margin: 0 2rem;
+    }
   }
 
   svg,
   img {
-    width: 160px;
+    width: 130px;
     @media ${({ theme }) => theme.mediaQuery.md} {
-      width: 280px;
+      width: 220px;
     }
   }
   @media ${({ theme }) => theme.mediaQuery.sm} {
@@ -79,12 +83,15 @@ const OSSTitle = styled.h3`
   font-family: HelveticaNeue;
   font-size: 1.8rem;
   font-weight: bold;
+  margin: 0;
 `;
 
 const OSSText = styled.p`
   font-size: 1.2rem;
+  margin-top: 0.5rem;
   @media ${({ theme }) => theme.mediaQuery.sm} {
     font-size: 1.4rem;
+    margin-top: 1rem;
   }
 `;
 

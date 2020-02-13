@@ -80,44 +80,44 @@ const Guides = () => (
     <LandingSectionContent>
       <SectionHeading>Guides</SectionHeading>
       <GuidesList>
-        <div>
+        <li>
           <GuideDemo>
             <DemoCustomChart />
           </GuideDemo>
           <GuideLink to="/guides/custom-charts">Custom Charts</GuideLink>
-        </div>
-        <div>
+        </li>
+        <li>
           <GuideDemo>
             <DemoZoom />
           </GuideDemo>
           <GuideLink to="/guides/brush-and-zoom">Brush and Zoom</GuideLink>
-        </div>
-        <div>
+        </li>
+        <li>
           <GuideDemo>
             <DemoCustomComponents />
           </GuideDemo>
           <GuideLink to="/guides/custom-components">
             Custom Components
           </GuideLink>
-        </div>
-        <div>
+        </li>
+        <li>
           <GuideDemo>
             <DemoTooltips />
           </GuideDemo>
           <GuideLink to="/guides/tooltips">Tooltips</GuideLink>
-        </div>
-        <div>
+        </li>
+        <li>
           <GuideDemo>
             <DemoSharedEvents />
           </GuideDemo>
           <GuideLink to="/guides/events">Events</GuideLink>
-        </div>
-        <div>
+        </li>
+        <li>
           <GuideDemo>
             <DemoAnimation />
           </GuideDemo>
           <GuideLink to="/guides/animations">Animations</GuideLink>
-        </div>
+        </li>
       </GuidesList>
     </LandingSectionContent>
   </LandingSectionWrapper>

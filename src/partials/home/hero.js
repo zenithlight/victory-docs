@@ -1,12 +1,12 @@
 import React from "react";
-// Settings
-import HeroDemo from "./hero-demo";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { Link } from "react-scroll";
+
+import NpmCopy from "./npm-copy";
+import HeroDemo from "./hero-demo";
 import { LandingSectionContent, LinkButton } from "./styles";
 import importedTheme from "../../styles/theme";
-import { Link } from "react-scroll";
-import NpmCopy from "./npm-copy";
 
 const HeroContainer = styled.section`
   background-image: url(${({ bg }) => bg});

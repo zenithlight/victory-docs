@@ -81,6 +81,23 @@ const FeatureText = styled.p`
   }
 `;
 
+const CodeWrapper = styled.span`
+  display: block;
+  padding-top: 1rem;
+  &&& {
+    > code {
+      margin: 0;
+      font-size: 1.1rem;
+      @media ${({ theme }) => theme.mediaQuery.md} {
+        font-size: 1.4rem;
+      }
+    }
+  }
+  @media ${({ theme }) => theme.mediaQuery.md} {
+    padding-top: 0;
+  }
+`;
+
 const Features = ({ featureArray }) => (
   <LandingSectionWrapper>
     <LandingSectionContent>
@@ -95,11 +112,10 @@ const Features = ({ featureArray }) => (
             <FeatureText>
               {feature.description}{" "}
               {feature.code && (
-                <>
-                  <br />
+                <CodeWrapper>
                   {/* explicit className not ideal but had to target the prism style */}
                   <code className="language-bash">{feature.code}</code>
-                </>
+                </CodeWrapper>
               )}
             </FeatureText>
           </Feature>
