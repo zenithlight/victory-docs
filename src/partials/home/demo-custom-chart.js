@@ -1,7 +1,7 @@
 import React from "react";
-
-// VComponents
 import { VictoryAxis, VictoryLine, VictoryLabel } from "victory";
+
+import importedTheme from "../../styles/theme";
 
 class MultipleAxes extends React.Component {
   getDataSetOne() {
@@ -146,30 +146,27 @@ class MultipleAxes extends React.Component {
   }
 
   getStyles() {
-    const BLUE_COLOR = "#00a3de";
-    const RED_COLOR = "#7c270b";
-
     return {
       parent: {
         boxSizing: "border-box",
         display: "block",
         margin: "0 auto",
         padding: 0,
-        fontFamily: "'Fira Sans', 'Helvetica Neue', Helvetica, sans-serif",
+        fontFamily: "Helvetica Neue', Helvetica, sans-serif",
         width: "100%",
         height: "auto"
       },
       title: {
         textAnchor: "start",
         verticalAnchor: "end",
-        fill: "#000000",
+        fill: importedTheme.color.black,
         fontFamily: "inherit",
         fontSize: "18px",
         fontWeight: "bold"
       },
       labelNumber: {
         textAnchor: "middle",
-        fill: "#ffffff",
+        fill: importedTheme.color.white,
         fontFamily: "inherit",
         fontSize: "14px"
       },
@@ -202,30 +199,30 @@ class MultipleAxes extends React.Component {
           strokeWidth: 2
         },
         axis: {
-          stroke: BLUE_COLOR,
+          stroke: importedTheme.color.red,
           strokeWidth: 0
         },
         ticks: { strokeWidth: 0 },
         tickLabels: {
-          fill: BLUE_COLOR,
+          fill: importedTheme.color.red,
           fontFamily: "inherit",
           fontSize: 16
         }
       },
       labelOne: {
-        fill: BLUE_COLOR,
+        fill: importedTheme.color.red,
         fontFamily: "inherit",
         fontSize: 12,
         fontStyle: "italic"
       },
       lineOne: {
         data: {
-          stroke: BLUE_COLOR,
+          stroke: importedTheme.color.red,
           strokeWidth: 4.5
         }
       },
       axisOneCustomLabel: {
-        fill: BLUE_COLOR,
+        fill: importedTheme.color.red,
         fontFamily: "inherit",
         fontWeight: 300,
         fontSize: 21
@@ -234,25 +231,25 @@ class MultipleAxes extends React.Component {
       // DATA SET TWO
       axisTwo: {
         axis: {
-          stroke: RED_COLOR,
+          stroke: importedTheme.color.black,
           strokeWidth: 0
         },
         tickLabels: {
-          fill: RED_COLOR,
+          fill: importedTheme.color.black,
           fontFamily: "inherit",
           fontSize: 16
         }
       },
       labelTwo: {
         textAnchor: "end",
-        fill: RED_COLOR,
+        fill: importedTheme.color.black,
         fontFamily: "inherit",
         fontSize: 12,
         fontStyle: "italic"
       },
       lineTwo: {
         data: {
-          stroke: RED_COLOR,
+          stroke: importedTheme.color.black,
           strokeWidth: 4.5
         }
       },
@@ -276,8 +273,20 @@ class MultipleAxes extends React.Component {
     return (
       <svg style={styles.parent} viewBox="0 0 450 350" height={350} width={450}>
         {/* Create stylistic elements */}
-        <rect x="0" y="0" width="10" height="30" fill="#f01616" />
-        <rect x="420" y="10" width="20" height="20" fill="#458ca8" />
+        <rect
+          x="0"
+          y="0"
+          width="10"
+          height="30"
+          fill={importedTheme.color.red}
+        />
+        <rect
+          x="420"
+          y="10"
+          width="20"
+          height="20"
+          fill={importedTheme.color.black}
+        />
 
         {/* Define labels */}
         <VictoryLabel x={25} y={24} style={styles.title} text="An outlook" />

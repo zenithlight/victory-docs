@@ -63,15 +63,18 @@ const GuideLink = styled(Link)`
   display: block;
   font-size: 1.8rem;
   font-weight: bold;
-  margin-top: 4rem;
+  margin: auto;
+  margin-top: 1.5rem;
   text-align: center;
 
   @media ${({ theme }) => theme.mediaQuery.sm} {
     line-height: 1.29;
+    margin-top: 2rem;
   }
   @media ${({ theme }) => theme.mediaQuery.md} {
     font-size: 2.4rem;
     line-height: 1.6;
+    margin-top: 2.3rem;
   }
 `;
 

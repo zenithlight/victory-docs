@@ -103,7 +103,7 @@ const content = {
         title: "Runpkg",
         description:
           "Explore, learn about, and perform static analysis on npm packages in the browser.          ",
-        logo: require("../../../static/logos/logo-runpkg.svg"),
+        logo: require("../../../static/logos/logo-runpkg.png"),
         link: "https://formidable.com/open-source/runpkg",
         hasOwnLogo: true
       }

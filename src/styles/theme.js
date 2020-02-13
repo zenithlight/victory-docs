@@ -14,8 +14,11 @@ const theme = {
     lightGray: "#f0f0f0",
     gray: "#999999",
     darkGray: "#DDD",
+    darkestGray: "#4d4d4d",
     nearBlack: "#242121",
     black: "#1f1f1f",
+
+    homeCharts: ["#AD343E", "#48639C", "#9984D4", "#AA4465 ", "#893168"],
 
     inlineCodeBorder: "#d3d3d3",
 

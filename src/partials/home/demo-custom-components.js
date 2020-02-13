@@ -10,6 +10,8 @@ import {
   VictoryLine
 } from "victory";
 
+import importedTheme from "../../styles/theme";
+
 const GradientPath = props => {
   const toGrayscale = color => {
     const integerColor = parseInt(color.replace("#", ""), 16);
@@ -79,13 +81,9 @@ export default class App extends React.Component {
     const streamData = this.getStreamData();
 
     const colors = [
-      "#006064",
-      "#00796B",
-      "#8BC34A",
-      "#DCE775",
-      "#FFF59D",
-      "#F4511E",
-      "#c33409"
+      ...importedTheme.color.homeCharts,
+      importedTheme.color.red,
+      importedTheme.color.accentBrown
     ];
 
     const styles = this.getStyles();
@@ -104,13 +102,15 @@ export default class App extends React.Component {
           style={{
             axis: { stroke: "none" },
             tickLabels: { fill: "none" },
-            grid: { stroke: "gray" }
+            grid: { stroke: importedTheme.color.gray }
           }}
           tickValues={[2, 4, 6, 8, 10, 12, 14, 17, 19, 21, 23, 25]}
         />
         <VictoryAxis
           dependentAxis
-          style={{ tickLabels: { fontSize: 15 } }}
+          style={{
+            tickLabels: { fontSize: 15, fill: importedTheme.color.nearBlack }
+          }}
           crossAxis={false}
         />
 
@@ -130,7 +130,7 @@ export default class App extends React.Component {
         <VictoryLine
           style={{
             data: {
-              stroke: "#c33409",
+              stroke: importedTheme.color.nearBlack,
               strokeWidth: 3
             }
           }}

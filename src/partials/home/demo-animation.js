@@ -4,6 +4,7 @@ import React from "react";
 import { VictoryScatter, VictoryChart } from "victory";
 import { range, random } from "lodash";
 
+import importedTheme from "../../styles/theme";
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -31,13 +32,9 @@ export default class App extends React.Component {
 
   getScatterData() {
     const colors = [
-      "violet",
-      "cornflowerblue",
-      "gold",
-      "orange",
-      "turquoise",
-      "tomato",
-      "greenyellow"
+      ...importedTheme.color.homeCharts,
+      importedTheme.color.red,
+      importedTheme.color.accentBrown
     ];
     const symbols = [
       "circle",

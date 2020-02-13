@@ -1,6 +1,10 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { LinkButton } from "./styles";
+import {
+  LinkButton,
+  LandingSectionWrapper,
+  LandingSectionContent
+} from "./styles";
 import importedTheme from "../../styles/theme";
 import PropTypes from "prop-types";
 const stripeStyle = css`
@@ -9,14 +13,6 @@ const stripeStyle = css`
   height: ${({ theme }) => `calc(${theme.layout.stripesWidth} / 2)`};
   width: 100%;
   background-color: ${({ bg }) => bg};
-`;
-
-const GetStartedContainer = styled.section`
-  background-color: #ff684f;
-  box-sizing: content-box;
-  color: ${({ theme }) => theme.color.white};
-  padding: 5rem 0;
-  text-align: center;
 `;
 
 const Stripe = styled.div`
@@ -29,22 +25,25 @@ const SectionHeading = styled.h2`
 
 const SectionDescription = styled.p`
   margin: 0 0 5rem 0;
-  padding: 0 10rem;
+`;
+
+const StyledLandingSectionContent = styled(LandingSectionContent)`
+  text-align: center;
 `;
 
 const GetStarted = ({ description, link }) => {
   return (
-    <>
-      <GetStartedContainer>
+    <LandingSectionWrapper bg={importedTheme.color.red}>
+      <StyledLandingSectionContent color={importedTheme.color.white}>
         <SectionHeading>Get Started</SectionHeading>
         <SectionDescription>{description}</SectionDescription>
         <LinkButton to={link.location} color={importedTheme.color.darkBrown}>
           {link.text}
         </LinkButton>
-      </GetStartedContainer>
+      </StyledLandingSectionContent>
       <Stripe bg={importedTheme.color.brown} />
       <Stripe bg={importedTheme.color.otherBrown} />
-    </>
+    </LandingSectionWrapper>
   );
 };
 

@@ -7,6 +7,8 @@ import {
   VictoryAxis
 } from "victory";
 
+import importedTheme from "../../styles/theme";
+
 export default class App extends React.Component {
   getStyles() {
     return {
@@ -36,7 +38,7 @@ export default class App extends React.Component {
               <VictoryTooltip
                 constrainToVisibleArea
                 cornerRadius={0}
-                flyoutStyle={{ fill: "white" }}
+                flyoutStyle={{ fill: importedTheme.color.white }}
               />
             }
           />
@@ -68,10 +70,10 @@ export default class App extends React.Component {
           ]}
           style={{
             data: {
-              stroke: "tomato",
-              strokeWidth: ({ active }) => (active ? 4 : 2)
+              stroke: importedTheme.color.red,
+              strokeWidth: ({ active }) => (active ? 5 : 3)
             },
-            labels: { fill: "tomato" }
+            labels: { fill: importedTheme.color.red }
           }}
         />
 
@@ -95,10 +97,10 @@ export default class App extends React.Component {
           ]}
           style={{
             data: {
-              stroke: "blue",
-              strokeWidth: ({ active }) => (active ? 4 : 2)
+              stroke: importedTheme.color.gray,
+              strokeWidth: ({ active }) => (active ? 5 : 3)
             },
-            labels: { fill: "blue" }
+            labels: { fill: importedTheme.color.gray }
           }}
         />
 
@@ -122,10 +124,10 @@ export default class App extends React.Component {
           ]}
           style={{
             data: {
-              stroke: "black",
-              strokeWidth: ({ active }) => (active ? 4 : 2)
+              stroke: importedTheme.color.black,
+              strokeWidth: ({ active }) => (active ? 5 : 3)
             },
-            labels: { fill: "black" }
+            labels: { fill: importedTheme.color.black }
           }}
         />
       </VictoryChart>

@@ -41,6 +41,8 @@ const OSSItem = styled.li`
   flex-direction: column;
 
   > a {
+    align-items: center;
+    display: flex;
     margin: auto;
     padding: 0;
     @media ${({ theme }) => theme.mediaQuery.sm} {
@@ -52,7 +54,7 @@ const OSSItem = styled.li`
   img {
     width: 130px;
     @media ${({ theme }) => theme.mediaQuery.md} {
-      width: 220px;
+      width: 170px;
     }
   }
   @media ${({ theme }) => theme.mediaQuery.sm} {
