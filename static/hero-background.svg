@@ -1,64 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="1440px" height="801px" viewBox="0 0 1440 801" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: sketchtool 61.2 (101010) - https://sketch.com -->
-    <title>D14E610C-11E2-42B1-97AC-E7A379A42551</title>
-    <desc>Created with sketchtool.</desc>
+<svg width="1440px" height="800px" viewBox="0 0 1440 800" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Background@2x</title>
+    <desc>Created with Sketch.</desc>
     <defs>
-        <rect id="path-1" x="0" y="0" width="1440" height="801"></rect>
+        <rect id="path-1" x="0" y="1" width="1440" height="801"></rect>
     </defs>
     <g id="Wireframe" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Desktop-Essentials">
-            <g id="Hed">
+            <g id="Hed" transform="translate(0.000000, -1.000000)">
                 <g id="Background">
-                    <rect id="Rectangle" fill="#4A1B13" x="0" y="1" width="1440" height="800"></rect>
+                    <rect id="Rectangle" fill="#5A2219" x="0" y="1" width="1440" height="800"></rect>
+                    <path d="M0,630.857 L242.57,801 L203.361,801 L0,655.456 L0,630.857 Z M757.4,616.6892 L1020.169,801 L980.961,801 L757.4,641 L533.839,801 L494.631,801 L757.4,616.6892 Z M1440,683.324 L1440,708.99 L1311.439,801 L1272.231,801 L1440,683.324 Z M757.4,348.6892 L1146.2,621.4 L1440,415.324 L1440,438.99 L1146.2,649.2602 L757.4,371 L368.6,649.2602 L0,385.456 L0,362.857 L368.6,621.4 L757.4,348.6892 Z M757.4,79.6892 L1146.2,352.4 L1440,146.324 L1440,170.99 L1146.2,381.2602 L757.4,103 L368.6,381.2602 L0,117.456 L0,93.857 L368.6,352.4 L757.4,79.6892 Z M524.059,1 L368.6,112.2602 L213.141,1 L251.099,1 L370,84.4 L488.902,1 L524.059,1 Z M1301.659,1 L1146.2,112.2602 L990.741,1 L1028.698,1 L1147.6,84.4 L1266.502,1 L1301.659,1 Z" id="Combined-Shape" fill="#531F17"></path>
+                    <path d="M0,764.857 L50.103,800 L14.732,800 L0,789.456 L0,764.857 Z M757.4,750.6892 L827.702,800 L792.331,800 L757.4,775 L722.469,800 L687.098,800 L757.4,750.6892 Z M757.4,482.6892 L1146.2,755.4 L1440,549.324 L1440,572.99 L1146.2,783.2602 L757.4,505 L368.6,783.2602 L0,519.456 L0,496.857 L368.6,755.4 L757.4,482.6892 Z M757.4,213.6892 L1146.2,486.4 L1440,280.324 L1440,304.99 L1146.2,515.2602 L757.4,237 L368.6,515.2602 L0,251.456 L0,227.857 L368.6,486.4 L757.4,213.6892 Z M712.689,0 L368.6,246.2602 L24.512,0 L58.63,0 L370,218.4 L681.37,0 L712.689,0 Z M836.23,0 L1147.6,218.4 L1440,13.306 L1440,35.991 L1146.2,246.2602 L802.111,0 L836.23,0 Z" id="Combined-Shape" fill="#531F17"></path>
                     <mask id="mask-2" fill="white">
                         <use xlink:href="#path-1"></use>
                     </mask>
                     <g id="Rectangle"></g>
-                    <g id="v2-Pattern" opacity="0.07" style="mix-blend-mode: multiply;" mask="url(#mask-2)">
-                        <g transform="translate(-2353.000000, -295.000000)" id="Bg-Zigs">
-                            <g transform="translate(779.000000, 0.000000)">
-                                <polygon id="Fill-1-Copy-2" fill="#BC5240" points="2332.8 0 1944 278.2602 1555.2 0 1555.2 245.6892 1944 518.4 2332.8 245.6892"></polygon>
-                                <polygon id="Fill-1-Copy-3" fill="#BC5240" points="3110.4 0 2721.6 278.2602 2332.8 0 2332.8 245.6892 2721.6 518.4 3110.4 245.6892"></polygon>
-                            </g>
-                            <g transform="translate(0.000000, 268.000000)">
-                                <polygon id="Fill-1-Copy-4" fill="#BC5240" points="3888 0 3499.2 278.2602 3110.4 0 3110.4 245.6892 3499.2 518.4 3888 245.6892"></polygon>
-                                <polygon id="Fill-1-Copy-3" fill="#BC5240" points="3110.4 0 2721.6 278.2602 2332.8 0 2332.8 245.6892 2721.6 518.4 3110.4 245.6892"></polygon>
-                            </g>
-                            <g transform="translate(0.000000, 537.000000)">
-                                <polygon id="Fill-1-Copy-4" fill="#BC5240" points="3888 0 3499.2 278.2602 3110.4 0 3110.4 245.6892 3499.2 518.4 3888 245.6892"></polygon>
-                                <polygon id="Fill-1-Copy-3" fill="#BC5240" points="3110.4 0 2721.6 278.2602 2332.8 0 2332.8 245.6892 2721.6 518.4 3110.4 245.6892"></polygon>
-                            </g>
-                            <g transform="translate(0.000000, 805.000000)">
-                                <polygon id="Fill-1-Copy-4" fill="#BC5240" points="3888 0 3499.2 278.2602 3110.4 0 3110.4 245.6892 3499.2 518.4 3888 245.6892"></polygon>
-                                <polygon id="Fill-1-Copy-3" fill="#BC5240" points="3110.4 0 2721.6 278.2602 2332.8 0 2332.8 245.6892 2721.6 518.4 3110.4 245.6892"></polygon>
-                            </g>
-                        </g>
-                    </g>
-                    <g id="v2-Pattern-Copy" opacity="0.07" style="mix-blend-mode: multiply;" mask="url(#mask-2)">
-                        <g transform="translate(-2353.000000, -435.000000)" id="Bg-Zigs">
-                            <g transform="translate(779.000000, 0.000000)">
-                                <polygon id="Fill-1-Copy-2" fill="#BC5240" points="2332.8 0 1944 278.2602 1555.2 0 1555.2 245.6892 1944 518.4 2332.8 245.6892"></polygon>
-                                <polygon id="Fill-1-Copy-3" fill="#BC5240" points="3110.4 0 2721.6 278.2602 2332.8 0 2332.8 245.6892 2721.6 518.4 3110.4 245.6892"></polygon>
-                            </g>
-                            <g transform="translate(0.000000, 268.000000)">
-                                <polygon id="Fill-1-Copy-4" fill="#BC5240" points="3888 0 3499.2 278.2602 3110.4 0 3110.4 245.6892 3499.2 518.4 3888 245.6892"></polygon>
-                                <polygon id="Fill-1-Copy-3" fill="#BC5240" points="3110.4 0 2721.6 278.2602 2332.8 0 2332.8 245.6892 2721.6 518.4 3110.4 245.6892"></polygon>
-                            </g>
-                            <g transform="translate(0.000000, 537.000000)">
-                                <polygon id="Fill-1-Copy-4" fill="#BC5240" points="3888 0 3499.2 278.2602 3110.4 0 3110.4 245.6892 3499.2 518.4 3888 245.6892"></polygon>
-                                <polygon id="Fill-1-Copy-3" fill="#BC5240" points="3110.4 0 2721.6 278.2602 2332.8 0 2332.8 245.6892 2721.6 518.4 3110.4 245.6892"></polygon>
-                            </g>
-                            <g transform="translate(0.000000, 805.000000)">
-                                <polygon id="Fill-1-Copy-4" fill="#BC5240" points="3888 0 3499.2 278.2602 3110.4 0 3110.4 245.6892 3499.2 518.4 3888 245.6892"></polygon>
-                                <polygon id="Fill-1-Copy-3" fill="#BC5240" points="3110.4 0 2721.6 278.2602 2332.8 0 2332.8 245.6892 2721.6 518.4 3110.4 245.6892"></polygon>
-                            </g>
-                            <g transform="translate(0.000000, 1075.000000)">
-                                <polygon id="Fill-1-Copy-4" fill="#BC5240" points="3888 0 3499.2 278.2602 3110.4 0 3110.4 245.6892 3499.2 518.4 3888 245.6892"></polygon>
-                                <polygon id="Fill-1-Copy-3" fill="#BC5240" points="3110.4 0 2721.6 278.2602 2332.8 0 2332.8 245.6892 2721.6 518.4 3110.4 245.6892"></polygon>
-                            </g>
-                        </g>
-                    </g>
                 </g>
             </g>
         </g>

@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components";
 
 // Assets
 import VIACOM from "../../../static/logos/logo-viacom.svg";
@@ -10,7 +11,6 @@ import REDFIN from "../../../static/logos/logo-redfin.svg";
 import TUNE from "../../../static/logos/logo-tune.svg";
 import ZILLOW from "../../../static/logos/logo-zillow.svg";
 import BENAROYA from "../../../static/logos/logo-benaroya.png";
-import styled from "styled-components";
 import importedTheme from "../../styles/theme";
 import {
   LinkButton,
@@ -20,14 +20,14 @@ import {
 
 const SectionHeading = styled.h2`
   color: ${({ theme }) => theme.color.darkBrown};
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: bold;
   line-height: 1.58;
   letter-spacing: 0.48px;
   margin: 0;
   text-align: center;
   @media ${({ theme }) => theme.mediaQuery.md} {
-    font-size: 24px;
+    font-size: 2.4rem;
   }
 `;
 
@@ -57,14 +57,14 @@ const Companies = () => (
     <LandingSectionContent>
       <SectionHeading>A Few of Our Fans</SectionHeading>
       <CompaniesList>
-        <CompanyLogo src={AIRBNB} />
-        <CompanyLogo src={FIVETHIRTYEIGHT} />
-        <CompanyLogo src={REDFIN} />
-        <CompanyLogo src={USAFACTS} />
-        <CompanyLogo src={VIACOM} />
-        <CompanyLogo src={BENAROYA} />
-        <CompanyLogo src={ZILLOW} />
-        <CompanyLogo src={TUNE} />
+        <CompanyLogo src={AIRBNB} alt="Airbnb" />
+        <CompanyLogo src={FIVETHIRTYEIGHT} alt="FiveThirtyEight" />
+        <CompanyLogo src={REDFIN} alt="Redfin" />
+        <CompanyLogo src={USAFACTS} alt="USAFacts" />
+        <CompanyLogo src={VIACOM} alt="Viacom" />
+        <CompanyLogo src={BENAROYA} alt="Benaroya" />
+        <CompanyLogo src={ZILLOW} alt="Zillow" />
+        <CompanyLogo src={TUNE} alt="Tune" />
       </CompaniesList>
       <LinkButton to="/about#showcase" color={importedTheme.color.black}>
         SEE SHOWCASE
@@ -72,13 +72,5 @@ const Companies = () => (
     </LandingSectionContent>
   </LandingSectionWrapper>
 );
-
-Companies.propTypes = {
-  style: PropTypes.object
-};
-
-Companies.defaultProps = {
-  style: null
-};
 
 export default Companies;

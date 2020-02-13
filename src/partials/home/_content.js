@@ -67,7 +67,7 @@ const content = {
   ],
   getStarted: {
     description:
-      "Victory is an opinionated, but fully overridable, ecosystem of composable React components. Check out the docs to see how you can get started building interactive data visualizations",
+      "Victory is an opinionated, but fully overridable, ecosystem of composable React components. Check out the docs to see how you can get started building interactive data visualizations.",
     link: {
       text: "DOCUMENTATION",
       location: "/docs"

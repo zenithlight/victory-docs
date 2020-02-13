@@ -11,14 +11,14 @@ import importedTheme from "../../styles/theme";
 
 const SectionHeading = styled.h2`
   color: ${({ theme }) => theme.color.white};
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: bold;
   line-height: 1.58;
   letter-spacing: 0.48px;
   margin: 0;
   text-align: center;
   @media ${({ theme }) => theme.mediaQuery.md} {
-    font-size: 24px;
+    font-size: 2.4rem;
   }
 `;
 
@@ -77,14 +77,14 @@ const OSSLink = styled.a`
 
 const OSSTitle = styled.h3`
   font-family: HelveticaNeue;
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: bold;
 `;
 
 const OSSText = styled.p`
-  font-size: 12px;
+  font-size: 1.2rem;
   @media ${({ theme }) => theme.mediaQuery.sm} {
-    font-size: 14px;
+    font-size: 1.4rem;
   }
 `;
 
@@ -122,7 +122,7 @@ const MoreOSS = ({ ossArray, link }) => (
 );
 
 MoreOSS.propTypes = {
-  link: PropTypes.shape(),
+  link: PropTypes.shape({ location: PropTypes.string, text: PropTypes.string }),
   ossArray: PropTypes.array
 };
 

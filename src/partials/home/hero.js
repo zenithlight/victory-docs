@@ -19,6 +19,7 @@ const HeroContainer = styled.section`
   }
   @media ${({ theme }) => theme.mediaQuery.md} {
     height: 690px;
+    margin-bottom: -1px;
   }
 `;
 
@@ -42,7 +43,7 @@ const Corner = styled.div`
 
 const CornerText = styled.p`
   color: ${({ theme }) => theme.color.nearBlack};
-  font-size: 8px;
+  font-size: 0.8rem;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -51,7 +52,7 @@ const CornerText = styled.p`
   margin: 0;
   white-space: pre-line;
   @media ${({ theme }) => theme.mediaQuery.md} {
-    font-size: 12px;
+    font-size: 1.2rem;
     letter-spacing: 0.86px;
   }
 `;
@@ -117,28 +118,28 @@ const HeroBadge = styled.img`
 const SectionHeading = styled.h1`
   align-self: center;
   justify-self: center;
-  font-size: 30px;
+  font-size: 3rem;
   font-weight: bold;
   grid-area: heading;
   letter-spacing: 6px;
   @media ${({ theme }) => theme.mediaQuery.sm} {
-    font-size: 48px;
+    font-size: 4.8rem;
     justify-self: left;
     letter-spacing: 9px;
   }
   @media ${({ theme }) => theme.mediaQuery.md} {
-    font-size: 80px;
+    font-size: 8rem;
     letter-spacing: 12.41px;
   }
 `;
 
 const SectionSubHeading = styled.h2`
   align-self: center;
-  font-size: 18px;
+  font-size: 1.8rem;
   grid-area: subheading;
   line-height: 1.67;
   @media ${({ theme }) => theme.mediaQuery.sm} {
-    font-size: 24px;
+    font-size: 2.4rem;
     line-height: 1.25;
   }
 `;
@@ -192,7 +193,7 @@ const StyledLinkButton = styled(LinkButton)`
 const LearnMore = styled(Link)`
   display: block;
   color: ${({ theme }) => theme.color.white};
-  font-size: 14px;
+  font-size: 1.4rem;
   margin: auto;
   line-height: 2.29;
   letter-spacing: 0.88px;

@@ -1,5 +1,4 @@
 import React from "react";
-// import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 import {
@@ -20,14 +19,14 @@ import styled from "styled-components";
 // * the section headings could be extracted into generic style
 const SectionHeading = styled.h2`
   color: ${({ theme }) => theme.color.darkBrown};
-  font-size: 24px;
+  font-size: 2.4rem;
   font-weight: bold;
   line-height: 1.06;
   letter-spacing: 0.72px;
   margin: 0;
   text-align: center;
   @media ${({ theme }) => theme.mediaQuery.md} {
-    font-size: 36px;
+    font-size: 3.6rem;
   }
 `;
 
@@ -62,7 +61,7 @@ const GuideDemo = styled.div`
 const GuideLink = styled(Link)`
   color: ${({ theme }) => theme.color.darkBrown};
   display: block;
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: bold;
   margin-top: 4rem;
   text-align: center;
@@ -71,7 +70,7 @@ const GuideLink = styled(Link)`
     line-height: 1.29;
   }
   @media ${({ theme }) => theme.mediaQuery.md} {
-    font-size: 24px;
+    font-size: 2.4rem;
     line-height: 1.6;
   }
 `;

@@ -26,7 +26,7 @@ const HeroNPMCopy = styled.p`
   text-align: left;
   padding: 0.33rem 1.5rem;
   line-height: 3.44rem;
-  font-size: 14px;
+  font-size: 1.4rem;
   letter-spacing: 0.2px;
   margin: 0;
   flex: 1 0 auto;
@@ -37,7 +37,7 @@ const HeroNPMButton = styled.button`
   height: 4rem;
   background: ${({ theme }) => theme.color.red};
   transition: background 0.4s;
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;

@@ -1,23 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { Element } from "react-scroll";
 import {
   LandingSectionWrapper,
   LandingSectionContent,
   DropShadow
 } from "./styles";
-import { Element } from "react-scroll";
 
 const SectionHeading = styled.h2`
   color: ${({ theme }) => theme.color.darkBrown};
-  font-size: 24px;
+  font-size: 2.4rem;
   font-weight: bold;
   line-height: 1.06;
   letter-spacing: 0.72px;
   margin: 0;
   text-align: center;
   @media ${({ theme }) => theme.mediaQuery.md} {
-    font-size: 36px;
+    font-size: 3.6rem;
   }
 `;
 
@@ -55,7 +55,7 @@ const FeatureImg = styled.img`
 const FeatureTitle = styled.h3`
   color: ${({ theme }) => theme.color.darkBrown};
   font-family: HelveticaNeue;
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: bold;
   margin-top: 4rem;
   line-height: 0.96;
@@ -65,18 +65,18 @@ const FeatureTitle = styled.h3`
     text-align: left;
   }
   @media ${({ theme }) => theme.mediaQuery.md} {
-    font-size: 24px;
+    font-size: 2.4rem;
   }
 `;
 
 const FeatureText = styled.p`
-  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 1.29;
   @media ${({ theme }) => theme.mediaQuery.sm} {
     line-height: 1.29;
   }
   @media ${({ theme }) => theme.mediaQuery.md} {
-    font-size: 24px;
+    font-size: 2.4rem;
     line-height: 1.6;
   }
 `;
@@ -109,8 +109,15 @@ const Features = ({ featureArray }) => (
   </LandingSectionWrapper>
 );
 
+const featureProps = {
+  title: PropTypes.string,
+  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  description: PropTypes.string,
+  code: PropTypes.string
+};
+
 Features.propTypes = {
-  featureArray: PropTypes.arrayOf(PropTypes.shape())
+  featureArray: PropTypes.arrayOf(PropTypes.shape(featureProps))
 };
 
 export default Features;
