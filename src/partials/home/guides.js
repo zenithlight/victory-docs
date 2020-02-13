@@ -50,7 +50,7 @@ const GuideDemo = styled.div`
   margin: auto;
   width: 250px;
 
-  background-color: #531f17;
+  border: 6px solid ${({ theme }) => theme.color.accentBrown};
 
   @media ${({ theme }) => theme.mediaQuery.md} {
     height: 350px

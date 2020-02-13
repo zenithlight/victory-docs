@@ -5,8 +5,9 @@ import { BounceAnimation } from "./styles/";
 import styled from "styled-components";
 
 const HeroNPMWrapper = styled.div`
-  flex-direction: row;
+  color: ${({ theme }) => theme.color.black};
   display: flex;
+  flex-direction: row;
   flex: 1 0 auto;
   width: 100%;
   @media ${({ theme }) => theme.mediaQuery.sm} {
@@ -20,7 +21,6 @@ const HeroNPMWrapper = styled.div`
 const HeroNPMCopy = styled.p`
   width: 22rem;
   height: 4rem;
-  color: #000;
   background-color: ${({ theme }) => theme.color.white};
   color: black;
   text-align: left;
@@ -43,7 +43,6 @@ const HeroNPMButton = styled.button`
   font-stretch: normal;
   line-height: normal;
   letter-spacing: 1px;
-  color: #383838;
   border: 0;
   text-transform: uppercase;
   cursor: copy;

@@ -6,6 +6,7 @@ const theme = {
     brown: "#bc5240",
     deepBrown: "#4a1b13",
     otherBrown: "#793d33",
+    accentBrown: "#531f17",
     darkBrown: "#4c2e29",
 
     white: "#ffffff",

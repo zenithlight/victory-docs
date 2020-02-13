@@ -123,7 +123,9 @@ const MoreOSS = ({ ossArray, link }) => (
           </OSSItem>
         ))}
       </OSSWrapper>
-      <LinkButton to={link.location}>{link.text}</LinkButton>
+      <LinkButton isExternal to={link.location}>
+        {link.text}
+      </LinkButton>
     </LandingSectionContent>
   </LandingSectionWrapper>
 );

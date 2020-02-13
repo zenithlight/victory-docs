@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styled from "styled-components";
 
 // Assets
@@ -44,11 +43,14 @@ const CompaniesList = styled.ul`
   }
 `;
 
-const CompanyLogo = styled.img`
+const Company = styled.li`
   align-self: center;
   justify-self: center;
   max-height: 100px;
   max-width: 200px;
+`;
+
+const CompanyLogo = styled.img`
   width: 100%;
 `;
 
@@ -57,14 +59,30 @@ const Companies = () => (
     <LandingSectionContent>
       <SectionHeading>A Few of Our Fans</SectionHeading>
       <CompaniesList>
-        <CompanyLogo src={AIRBNB} alt="Airbnb" />
-        <CompanyLogo src={FIVETHIRTYEIGHT} alt="FiveThirtyEight" />
-        <CompanyLogo src={REDFIN} alt="Redfin" />
-        <CompanyLogo src={USAFACTS} alt="USAFacts" />
-        <CompanyLogo src={VIACOM} alt="Viacom" />
-        <CompanyLogo src={BENAROYA} alt="Benaroya" />
-        <CompanyLogo src={ZILLOW} alt="Zillow" />
-        <CompanyLogo src={TUNE} alt="Tune" />
+        <Company>
+          <CompanyLogo src={AIRBNB} alt="Airbnb" />
+        </Company>
+        <Company>
+          <CompanyLogo src={FIVETHIRTYEIGHT} alt="FiveThirtyEight" />
+        </Company>
+        <Company>
+          <CompanyLogo src={REDFIN} alt="Redfin" />
+        </Company>
+        <Company>
+          <CompanyLogo src={USAFACTS} alt="USAFacts" />
+        </Company>
+        <Company>
+          <CompanyLogo src={VIACOM} alt="Viacom" />
+        </Company>
+        <Company>
+          <CompanyLogo src={BENAROYA} alt="Benaroya" />
+        </Company>
+        <Company>
+          <CompanyLogo src={ZILLOW} alt="Zillow" />
+        </Company>
+        <Company>
+          <CompanyLogo src={TUNE} alt="Tune" />
+        </Company>
       </CompaniesList>
       <LinkButton to="/about#showcase" color={importedTheme.color.black}>
         SEE SHOWCASE

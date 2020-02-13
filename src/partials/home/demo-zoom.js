@@ -24,11 +24,12 @@ export default class App extends React.Component {
     this.setState({ zoomDomain: domain });
   }
 
-  getStyles() {
+  getStyles(isMain) {
     return {
       parent: {
         boxSizing: "border-box",
         display: "block",
+        height: isMain ? "70%" : "30%",
         margin: "0 auto",
         padding: 0
       }
@@ -36,7 +37,6 @@ export default class App extends React.Component {
   }
 
   render() {
-    const styles = this.getStyles();
     return (
       <>
         <VictoryChart
@@ -47,11 +47,13 @@ export default class App extends React.Component {
             top: 20
           }}
           width={450}
-          height={275}
+          height={245}
           scale={{ x: "time" }}
-          style={styles}
+          style={this.getStyles(true)}
           containerComponent={
             <VictoryZoomContainer
+              width={450}
+              height={245}
               zoomDimension="x"
               zoomDomain={this.state.zoomDomain}
               onZoomDomainChange={this.handleZoom.bind(this)}
@@ -94,6 +96,10 @@ export default class App extends React.Component {
               {
                 x: new Date(2013, 1, 1),
                 y: 470
+              },
+              {
+                x: new Date(2020, 1, 1),
+                y: 340
               }
             ]}
           />
@@ -106,14 +112,16 @@ export default class App extends React.Component {
             bottom: 35
           }}
           width={450}
-          height={75}
+          height={105}
           scale={{ x: "time" }}
-          style={styles}
+          style={this.getStyles(false)}
           containerComponent={
             <VictoryBrushContainer
               brushDimension="x"
               brushDomain={this.state.selectedDomain}
+              height={105}
               onBrushDomainChange={this.handleBrush.bind(this)}
+              width={450}
             />
           }
         >
@@ -124,7 +132,9 @@ export default class App extends React.Component {
               new Date(1995, 1, 1),
               new Date(2000, 1, 1),
               new Date(2005, 1, 1),
-              new Date(2010, 1, 1)
+              new Date(2010, 1, 1),
+              new Date(2015, 1, 1),
+              new Date(2020, 1, 1)
             ]}
             tickFormat={x => new Date(x).getFullYear()}
           />
@@ -164,6 +174,10 @@ export default class App extends React.Component {
               {
                 x: new Date(2013, 1, 1),
                 y: 470
+              },
+              {
+                x: new Date(2020, 1, 1),
+                y: 340
               }
             ]}
           />

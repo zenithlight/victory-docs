@@ -36,9 +36,10 @@ const FeaturesList = styled.ul`
 
 const Feature = styled.div`
   justify-self: center;
-  padding: 0 2rem;
-  @media ${({ theme }) => theme.mediaQuery.sm} {
-    padding: 0;
+  padding: 0;
+  width: 18.5rem;
+  @media ${({ theme }) => theme.mediaQuery.md} {
+    width: 28rem;
   }
 `;
 
@@ -46,10 +47,6 @@ const FeatureImg = styled.img`
   ${DropShadow}
   display: block;
   margin: auto;
-  width: 160px;
-  @media ${({ theme }) => theme.mediaQuery.md} {
-    width: 280px;
-  }
 `;
 
 const FeatureTitle = styled.h3`
@@ -89,7 +86,7 @@ const CodeWrapper = styled.span`
       margin: 0;
       font-size: 1.1rem;
       @media ${({ theme }) => theme.mediaQuery.md} {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
       }
     }
   }
